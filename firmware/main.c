@@ -46,17 +46,16 @@ static void enableCounter() {
 
 
 
+void setPeriod(uint16_t period) {
+  disableCounter();
+  // Timer counter match value for period (sec 18.7.7)
+  LPC_TMR16B0->MR1 = period;
+  enableCounter();
+}
 void setDuty(uint16_t duty) {
   disableCounter();
   // Timer counter match value for duty cycle (sec 18.7.7)
   LPC_TMR16B0->MR0 = duty;
-  enableCounter();
-}
-
-void setValue(uint16_t period) {
-  disableCounter();
-  // Timer counter match value for period (sec 18.7.7)
-  LPC_TMR16B0->MR1 = period;
   enableCounter();
 }
 
@@ -66,9 +65,10 @@ int main() {
   initCLK();
   // initGPIO();
   initPWM();
+  setPeriod(0x32);
 
+  // Change this to change the PWM value
   setDuty(0xC);
-  setValue(0x32);
 
   //infinite loop
   while(1) {}
