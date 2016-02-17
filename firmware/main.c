@@ -1,6 +1,11 @@
 #include "include/LPC11xx.h"
 #include "include/bitmask.h"
 
+const PERIOD = 20000;
+const NEUTRAL = 1500;
+const RANGE = 400;
+const ANGLE_RANGE = 45;
+
 // Enable IOCON clock
 static void initCLK() {
   // Enable clock for IO configuration block (sec 3.5.14)
@@ -23,6 +28,8 @@ static void initPWM() {
   // Enable clock for 16-bit counter/timer 0 (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT7;
 
+  // Prescale max value (sec 18.7.4)
+  LPC_TMR16B0->PR = 50;
   // The TC will be reset if MR1 matches it (sec 18.7.6)
   LPC_TMR16B0->MCR = BIT4;
   // Set CT16B0_MAT0 to 1 on match (sec 18.7.10)
@@ -59,16 +66,22 @@ void setDuty(uint16_t duty) {
   enableCounter();
 }
 
+void setPWM(int16_t angle) {
+  if ((angle < ANGLE_RANGE) && (angle > -ANGLE_RANGE)) {
+    setDuty(NEUTRAL + RANGE * (angle / ANGLE_RANGE));
+  }
+}
+
 
 
 int main() {
   initCLK();
   // initGPIO();
   initPWM();
-  setPeriod(0x32);
+  setPeriod(PERIOD);
 
   // Change this to change the PWM value
-  setDuty(0xC);
+  setPWM(0);
 
   //infinite loop
   while(1) {}
