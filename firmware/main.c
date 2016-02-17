@@ -29,7 +29,7 @@ static void initPWM() {
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT7;
 
   // Prescale max value (sec 18.7.4)
-  LPC_TMR16B0->PR = 50;
+  LPC_TMR16B0->PR = 48;
   // The TC will be reset if MR1 matches it (sec 18.7.6)
   LPC_TMR16B0->MCR = BIT4;
   // Set CT16B0_MAT0 to 1 on match (sec 18.7.10)
@@ -66,10 +66,8 @@ void setDuty(uint16_t duty) {
   enableCounter();
 }
 
-void setPWM(int16_t angle) {
-  if ((angle < ANGLE_RANGE) && (angle > -ANGLE_RANGE)) {
-    setDuty(NEUTRAL + RANGE * (angle / ANGLE_RANGE));
-  }
+void setPWM(int16_t pos) {
+  setDuty(PERIOD - (NEUTRAL + pos));
 }
 
 
@@ -80,7 +78,7 @@ int main() {
   initPWM();
   setPeriod(PERIOD);
 
-  // Change this to change the PWM value
+  // Change this to anything from -400 to 400 to change servo position
   setPWM(0);
 
   //infinite loop
