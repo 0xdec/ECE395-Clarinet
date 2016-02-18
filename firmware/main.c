@@ -88,15 +88,17 @@ void servoPos(int16_t pos) {
 
 int main() {
   int pos = 0;
-  bool dir = true;
+  int dir = 1;
 
   initCLK();
   initPWM();
 
   // Infinite loop
   while(1) {
-    if ((pos >= RANGE) || (pos <= -RANGE)) {
-      dir = !dir;
+    if (pos >= RANGE) {
+      dir = 0;
+    } else if (pos <= -RANGE) {
+      dir = 1;
     }
 
     if (dir) {
@@ -105,7 +107,7 @@ int main() {
       servoPos(pos--);
     }
 
-    delay_ms(2);
+    delay_us(500);
   }
 
   return 0;
