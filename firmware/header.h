@@ -1,6 +1,9 @@
-#ifndef __bitmask_H__
-#define __bitmask_H__
+#ifndef _HEADER_H_
+#define _HEADER_H_
 
+#include "include/LPC11xx.h"
+
+// Bitmasks
 #define BIT0 (1 << 0)
 #define BIT1 (1 << 1)
 #define BIT2 (1 << 2)
