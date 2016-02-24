@@ -2,6 +2,7 @@
 
 #include "system.h"
 #include "servo.h"
+#include "midi.h"
 #include "delay.h"
 
 #define RANGE 800
@@ -13,6 +14,7 @@ int main() {
 
   initCLK();
   initServo();
+  initMIDI();
 
   // Infinite loop
   while (1) {
