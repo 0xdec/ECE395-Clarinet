@@ -19,6 +19,11 @@ void initUART(uint8_t prescaler) {
   LPC_UART->LCR |= 0x03;
   // Enable UART transmit (sec 13.5.16)
   LPC_UART->TER |= BIT7;
+
+  // Enable the UART interrupt
+  NVIC_EnableIRQ(UART_IRQn);
+  // Enable RBR interrupt (sec 13.5.4)
+  LPC_UART->IER |= BIT0;
 }
 
 void sendByte(uint8_t data) {
