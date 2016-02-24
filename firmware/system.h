@@ -3,11 +3,7 @@
 
 #include "header.h"
 
-#define KHZ(freq) ((freq) * 1000)
-#define MHZ(freq) (KHZ(KHZ(freq)))
-#define BAUD(rate, freq) ((freq) / ((rate) * 16))
-
-#define BASE_FREQ (MHZ(48))
+#define BASE_FREQ 48000000UL
 
 void initCLK(void);
 
