@@ -1,6 +1,6 @@
 #include "pwm.h"
 
-uint16_t pwmPeriod;
+static volatile uint16_t pwmPeriod = 0;
 
 // Set up 16 bit timer for PWM
 void initPWM(uint16_t period) {
