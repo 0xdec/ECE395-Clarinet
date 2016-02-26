@@ -1,9 +1,9 @@
-#include "header.h"
+#include "firmware/header.h"
 
-#include "system.h"
-#include "servo.h"
-#include "midi.h"
-#include "delay.h"
+#include "firmware/system.h"
+#include "firmware/servo.h"
+#include "firmware/midi.h"
+#include "firmware/delay.h"
 
 #define RANGE 800
 #define ANGLE 90
@@ -14,7 +14,7 @@ int main() {
 
   initCLK();
   initServo();
-  initMIDI();
+  //initMIDI();
 
   // Infinite loop
   while (1) {
@@ -30,7 +30,7 @@ int main() {
       servoPos(pos--);
     }
 
-    delay_us(500);
+    delay_ms(2);
   }
 
   return 0;

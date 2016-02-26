@@ -1,0 +1,11 @@
+.\notes.o: firmware\notes.c
+.\notes.o: firmware\notes.h
+.\notes.o: firmware\header.h
+.\notes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\notes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\notes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\notes.o: firmware\include/LPC11xx.h
+.\notes.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h
+.\notes.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\notes.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
+.\notes.o: C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h
