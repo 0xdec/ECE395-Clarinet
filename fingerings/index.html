@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jordi Pakey-Rodriguez">
+  <title>Fingering Configurator</title>
+
+  <script src="bower_components/svg.js/dist/svg.min.js"></script>
+  <script src="bower_components/svg.absorb.js/svg.absorb.min.js"></script>
+
+  <script defer src="scripts/main.js"></script>
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #fingering {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+    }
+    #drawing {
+      height: 1000px;
+    }
+
+    path {
+      fill: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <pre id="fingering">
+
+  </pre>
+  <div id="drawing"></div>
+  <object id="fingeringChart" style="display: none;" data="Clarinet-fingering-template.svg" type="image/svg+xml"></object>
+</body>
+
+</html>
