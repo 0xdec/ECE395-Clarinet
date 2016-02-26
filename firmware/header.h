@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-
 #include "include/LPC11xx.h"
 
 // Bitmasks

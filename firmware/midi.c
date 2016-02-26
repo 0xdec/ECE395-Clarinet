@@ -16,8 +16,8 @@ void initMIDI() {
 
 void UART_IRQHandler() {
   /* get the received byte and clear the interrupt */
-  uint8_t byte = UART_U0RBR;
-
+  //uint8_t byte = UART_U0RBR; 
+	uint8_t byte = 0;
   if (byte & BIT7) {
     // Status byte
     midiBuffer[0] = byte;

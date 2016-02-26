@@ -1,9 +1,9 @@
 #include "servo.h"
 
 void initServo() {
-  initPWM(PERIOD);
+  initPWM(PERIOD, NEUTRAL);
 }
 
-void servoPos(int16_t pos) {
-  setWidth(NEUTRAL + pos);
+void servoPos(uint16_t pos) {
+  setWidth(PERIOD, NEUTRAL + pos);
 }
