@@ -40,6 +40,8 @@ var render = function() {
   var json = JSON.stringify(note, function(key, value) {
     if (typeof value == 'boolean') {
       return value ? 'closed' : 'open';
+    } else if (key === 'number') {
+      return;
     }
 
     return value;
