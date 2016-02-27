@@ -15,13 +15,14 @@ const instruments = {
       {
         type: 'rect',
         size: [2.5, 5.5],
-        pos: [-3, 9.25]
+        pos: [-3, 9.25],
+        fill: '#eee'
       },
       {
         type: 'line',
         size: [3],
         pos: [-3, 6.5],
-        stroke: '#fff',
+        stroke: '#eee',
         strokeOpacity: 1,
         strokeWidth: 2
       },
@@ -29,7 +30,7 @@ const instruments = {
         type: 'line',
         size: [3],
         pos: [-3, 12],
-        stroke: '#fff',
+        stroke: '#eee',
         strokeOpacity: 1,
         strokeWidth: 2
       },
@@ -42,57 +43,57 @@ const instruments = {
         type: 'ellipse',
         size: [1.5, 1],
         pos: [-1.5, -7.75],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'ellipse',
         size: [2, 1],
         pos: [-2.5, -11],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'ellipse',
         size: [2, 1],
         pos: [-0.5, -12.25],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'ellipse',
         size: [2, 1],
         pos: [-2.5, -12],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'circle',
         size: [0.75],
         pos: [-2, 1.5],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'circle',
         size: [0.75],
         pos: [-2, 0.5],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'circle',
         size: [0.75],
         pos: [-2, -0.5],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         type: 'circle',
         size: [0.75],
         pos: [-2, -1.5],
-        fill: '#eee',
-        stroke: '#ccc'
+        fill: '#ddd',
+        stroke: '#bbb'
       },
       {
         name: 'key_0',
@@ -246,9 +247,11 @@ var render = function() {
   var allHex = notes.map(note => note.hex).join(',\n  ');
 
   var info = document.getElementById('info');
-  info.textContent = `Note ${current}: ${json}
-\nuint16_t noteMap[${notes.length}] = {\n  ${allHex}\n};`.replace(/"/g, '');
-}
+  info.textContent = `Note ${current}: ${json}`.replace(/"/g, '');
+
+  var code = document.getElementById('code');
+  code.textContent = `uint16_t noteMap[${notes.length}] = {\n  ${allHex}\n};`;
+};
 var edit = function(num) {
   current = num;
   render();
@@ -266,6 +269,8 @@ var create = function(val) {
   var prevNote = notes[current];
 
   note.number = val || prevNote.number || 0;
+  note.binary = '';
+  note.hex = '';
   note.keys = {};
   for (var i = 0; i < 16; i++) {
     note.keys[i] = Boolean((note.number >> i) & 1);
