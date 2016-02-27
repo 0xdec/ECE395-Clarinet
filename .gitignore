@@ -3,3 +3,9 @@ reference
 *.o
 *.d
 *.crf
+*.htm
+*.lnp
+*.map
+*.axf
+*.build_log.htm
+*.dep
