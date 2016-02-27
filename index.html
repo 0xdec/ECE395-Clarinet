@@ -7,8 +7,8 @@
   <meta name="author" content="Jordi Pakey-Rodriguez">
   <title>Fingering Configurator</title>
 
-  <script src="bower_components/svg.js/dist/svg.min.js"></script>
-  <script src="bower_components/svg.absorb.js/svg.absorb.min.js"></script>
+  <script src="bower_components/draft.js/dist/draft.min.js"></script>
+  <script src="bower_components/draft-svg/dist/draft-svg.min.js"></script>
 
   <script defer src="scripts/main.js"></script>
 
@@ -19,25 +19,23 @@
       margin: 0;
       padding: 0;
     }
-
-    #info {
-      position: absolute;
-    }
-    #drawing {
-      height: 1000px;
+    div {
+      max-width: 50%;
+      float: left;
     }
   </style>
 </head>
 
 <body>
-  <div id="info">
+  <div>
     <button type="button" onclick="prev()">Prev</button>
+    <button type="button" onclick="create()">New Note</button>
     <button type="button" onclick="next()">Next</button>
-    <pre id="chart"></pre>
+
+    <pre id="info"></pre>
   </div>
 
-  <div id="drawing"></div>
-  <object id="fingeringChart" style="display: none;" data="Clarinet-fingering-template.svg" type="image/svg+xml"></object>
+  <div id="container"></div>
 </body>
 
 </html>
