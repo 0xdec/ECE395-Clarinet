@@ -2,6 +2,14 @@ var keySVG = [];
 var notes = [];
 var currentNote;
 
+// From F to F
+var clarinetNotes = [
+  0x10fe, 0x40fe, 0x00fe, 0x80fe, 0x007e, 0x003e, 0x005e, 0x001e, 0x081e, 0x000e, 0x040e, 0x0006,
+  0x0002, 0x0004, 0x0000, 0x0200, 0x0100, 0x0101, 0x20ff, 0x10ff, 0x40ff, 0x00ff, 0x80ff, 0x007f,
+  0x003f, 0x005f, 0x001f, 0x081f, 0x000f, 0x040f, 0x0007, 0x0003, 0x007b, 0x803b, 0x805b, 0x801b,
+  0x881b
+];
+
 var render = function() {
   var format = function(num, type) {
     var base = type.charAt(0);
@@ -59,10 +67,10 @@ var edit = function(num) {
     var note = notes[num];
     var prevNote = notes[currentNote || 0];
 
-    note.number = prevNote.number || 0;
+    note.number = clarinetNotes[num] || prevNote.number || 0;
     note.keys = {};
     for (var i = 0; i < 16; i++) {
-      note.keys[i] = prevNote.keys[i] || false;
+      note.keys[i] = Boolean((note.number >> i) & 1);
     }
   }
 
@@ -158,5 +166,7 @@ document.getElementById('fingeringChart').addEventListener('load', function() {
     keySVG.push(elem);
   });
 
-  edit(0);
+  for (var i = clarinetNotes.length || 1; i > 0; i--) {
+    edit(i - 1);
+  }
 });
