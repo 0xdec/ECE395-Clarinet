@@ -7,6 +7,6 @@
 #define NEUTRAL 1500
 
 void initServo(void);
-void servoPos(uint16_t pos);
+void servoPos(int16_t pos);
 
 #endif
