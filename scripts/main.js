@@ -34,7 +34,7 @@ var render = function() {
   note.hex = format(note.number, 'h4');
 
   for (var key in note.keys) {
-    keySVG[key].style('fill', note.keys[key] ? '#00f' : '#fff');
+    keySVG[key].style('fill', note.keys[key] ? '#444' : '#bbb');
   }
 
   var json = JSON.stringify(note, function(key, value) {
@@ -46,7 +46,7 @@ var render = function() {
   }, 2);
   var allHex = JSON.stringify(notes.map(note => note.hex), null, 2);
 
-  var chart = document.getElementById('fingering');
+  var chart = document.getElementById('chart');
   chart.textContent = `Note ${currentNote}: ${json}
 \nuint16_t noteMap[${notes.length}] = ${allHex}`.replace(/"/g, '');
 }
@@ -81,24 +81,65 @@ document.getElementById('fingeringChart').addEventListener('load', function() {
   draw.absorb(doc);
   // var use = draw.use('elementId', 'Clarinet-fingering-template.svg').move(0, 0);
 
-  keySVG.push(SVG.get('path3837'));
-  keySVG.push(SVG.get('use3839'));
-  keySVG.push(SVG.get('path3769'));
-  keySVG.push(SVG.get('use3771'));
-  keySVG.push(SVG.get('use3773'));
-  keySVG.push(SVG.get('use3775'));
-  keySVG.push(SVG.get('use3777'));
-  keySVG.push(SVG.get('use3779'));
-  keySVG.push(SVG.get('path3781'));
-  keySVG.push(SVG.get('path3806'));
-  keySVG.push(SVG.get('path3812'));
-  keySVG.push(SVG.get('path3819'));
-  keySVG.push(SVG.get('path3827'));
-  keySVG.push(SVG.get('path3822'));
-  keySVG.push(SVG.get('path3825'));
-  keySVG.push(SVG.get('use3833'));
+  var keyIDs = [
+    'path3837',
+    'use3839',
+    'path3769',
+    'use3771',
+    'use3773',
+    'use3775',
+    'use3777',
+    'use3779',
+    'path3781',
+    'path3806',
+    'path3812',
+    'path3819',
+    'path3827',
+    'path3822',
+    'path3825',
+    'use3833'
+  ];
 
-  for (var elem of keySVG) {
+  var getPath = function(id) {
+    id = id.replace('#', '');
+    var elem = SVG.get(id);
+
+    if (elem.type === 'use') {
+      return getPath(elem.node.href.baseVal);
+    }
+
+    return id;
+  };
+
+  var convert = function(id) {
+    var elem = SVG.get(id);
+    var pos = elem.transform();
+
+    elem = elem.replace(SVG.get(getPath(id)).clone());
+    elem.attr('id', id);
+
+    if (id !== 'use3833' && id !== 'use3817') {
+      pos = {
+        x: pos.x / elem.transform().scaleX,
+        y: pos.y / elem.transform().scaleY
+      }
+    }
+
+    elem.transform(pos, true);
+
+    return elem;
+  };
+
+  convert('use3817');
+
+  keyIDs.forEach(function(id) {
+    var elem = SVG.get(id);
+
+    if (elem.type === 'use') {
+      elem = convert(id);
+    }
+
+    elem.style('stroke', '#333');
     elem.click(function() {
       var note = notes[currentNote];
       var keys = note.keys;
@@ -111,7 +152,8 @@ document.getElementById('fingeringChart').addEventListener('load', function() {
 
       render();
     });
-  }
+    keySVG.push(elem);
+  });
 
   edit(0);
 });

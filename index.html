@@ -20,9 +20,7 @@
       padding: 0;
     }
 
-    #fingering {
-      height: 100%;
-      width: 200px;
+    #info {
       position: fixed;
     }
     #drawing {
@@ -36,11 +34,11 @@
 </head>
 
 <body>
-  <button type="button" onclick="prev()">Prev</button>
-  <button type="button" onclick="next()">Next</button>
-  <pre id="fingering">
-
-  </pre>
+  <div id="info">
+    <button type="button" onclick="prev()">Prev</button>
+    <button type="button" onclick="next()">Next</button>
+    <pre id="chart"></pre>
+  </div>
   <div id="drawing"></div>
   <object id="fingeringChart" style="display: none;" data="Clarinet-fingering-template.svg" type="image/svg+xml"></object>
 </body>
