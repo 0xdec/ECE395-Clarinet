@@ -4,6 +4,6 @@ void initServo() {
   initPWM(PERIOD);
 }
 
-void servoPos(uint16_t pos) {
+void servoPos(int16_t pos) {
   setWidth(NEUTRAL + pos);
 }
