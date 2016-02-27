@@ -247,10 +247,12 @@ var render = function() {
   var allHex = notes.map(note => note.hex).join(',\n  ');
 
   var info = document.getElementById('info');
-  info.textContent = `Note ${current}: ${json}`.replace(/"/g, '');
+  info.firstElementChild.textContent = 'Current Note';
+  info.lastElementChild.textContent = `${current}: ${json}`.replace(/"/g, '');
 
   var code = document.getElementById('code');
-  code.textContent = `uint16_t noteMap[${notes.length}] = {\n  ${allHex}\n};`;
+  code.firstElementChild.textContent = 'C-Style Array';
+  code.lastElementChild.textContent = `uint16_t noteMap[${notes.length}] = {\n  ${allHex}\n};`;
 };
 var edit = function(num) {
   current = num;

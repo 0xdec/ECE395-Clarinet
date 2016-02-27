@@ -21,41 +21,57 @@
       padding: 8px;
       box-sizing: border-box;
     }
-    pre {
-      background: #fff;
-      border-radius: 4px;
-
-      margin: 8px;
-      padding: 8px;
-    }
 
     .flex {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
     }
     .flex.column {
       flex-direction: column;
     }
-    .flex.center {
-      text-align: center;
+    .flex.row.center {
       justify-content: center;
+    }
+    .flex.column.center {
+      align-items: center;
+    }
+    .flex.around {
+      justify-content: space-around;
+    }
+    .well {
+      background: #fff;
+      border-radius: 4px;
+      margin: 8px;
+      padding: 8px;
+    }
+    .well .title {
+      text-align: center;
+      opacity: 0.87;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
-  <div class="flex">
+  <div class="flex row around">
     <div id="container"></div>
     <div>
-      <div class="flex center">
+      <div class="flex row center">
         <button type="button" onclick="prev()">Prev</button>
         <button type="button" onclick="create()">New Note</button>
         <button type="button" onclick="next()">Next</button>
       </div>
-      <div class="flex">
-        <pre id="info"></pre>
-        <pre id="code"></pre>
+      <div class="flex row">
+        <div id="info" class="flex column center well">
+          <span class="title"></span>
+          <pre></pre>
+        </div>
+        <div id="code" class="flex column center well">
+          <span class="title"></span>
+          <pre></pre>
+        </div>
       </div>
     </div>
   </div>
