@@ -223,7 +223,6 @@ var render = function() {
     }
 
     num = num.toString(baseInt);
-
     return `0${base}${'0'.repeat(length - num.length)}${num}`;
   }
 
@@ -259,8 +258,8 @@ var prev = function() {
   if (current > 0) {
     edit(current - 1);
   }
-}
-var create = function(val = 0) {
+};
+var create = function(val) {
   var num = notes.length;
   notes[num] = {};
   var note = notes[num];
@@ -278,7 +277,7 @@ var next = function() {
   if (current + 1 < notes.length) {
     edit(current + 1);
   }
-}
+};
 
 var draw = function(instrument) {
   chart.meta.name = instrument;
