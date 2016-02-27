@@ -46,11 +46,11 @@ var render = function() {
 
     return value;
   }, 2);
-  var allHex = JSON.stringify(notes.map(note => note.hex), null, 2);
+  var allHex = notes.map(note => note.hex).join(',\n  ');
 
   var chart = document.getElementById('chart');
   chart.textContent = `Note ${currentNote}: ${json}
-\nuint16_t noteMap[${notes.length}] = ${allHex}`.replace(/"/g, '');
+\nuint16_t noteMap[${notes.length}] = {\n  ${allHex}\n}`.replace(/"/g, '');
 }
 
 var edit = function(num) {
