@@ -57,11 +57,12 @@ var edit = function(num) {
   if (!notes[num]) {
     notes[num] = {};
     var note = notes[num];
+    var prevNote = notes[currentNote || 0];
 
-    note.number = 0;
+    note.number = prevNote.number || 0;
     note.keys = {};
     for (var i = 0; i < 16; i++) {
-      note.keys[i] = false;
+      note.keys[i] = prevNote.keys[i] || false;
     }
   }
 
