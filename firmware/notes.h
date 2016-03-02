@@ -2,6 +2,7 @@
 #define _NOTES_H_
 
 #include "servo.h"
+#include "spi.h"
 
 #define LOWEST_NOTE 51
 #define NUM_NOTES   37
