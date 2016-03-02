@@ -1,6 +1,6 @@
 #include "notes.h"
 
-// Starts at Eb below the staff
+// Starts at F below the staff
 static const uint16_t note_map[NUM_NOTES] = {
   0x10fe,
   0x40fe,
