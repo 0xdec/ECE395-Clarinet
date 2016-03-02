@@ -43,6 +43,11 @@ static const uint16_t note_map[NUM_NOTES] = {
 
 static int8_t current_note = -1;
 
+static void shift_out(uint16_t data) {
+  SPI_send(data >> 8);
+  SPI_send(data & 0xFF);
+}
+
 void note_on(int8_t note, int8_t velocity) {
   if (velocity == 0) {
     note_off(note);
