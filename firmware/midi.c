@@ -54,7 +54,7 @@ void MIDI_receive() {
             note_off(MIDI_buffer[1]);
             break;
           case 0x90: // Note On
-            note_on(MIDI_buffer[1]);
+            note_on(MIDI_buffer[1], MIDI_buffer[2]);
             break;
           default:
             break;

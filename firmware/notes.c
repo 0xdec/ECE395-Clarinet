@@ -43,12 +43,16 @@ static const uint16_t note_map[NUM_NOTES] = {
 
 static int8_t current_note = -1;
 
-void note_on(int8_t note) {
-  note -= LOWEST_NOTE;
+void note_on(int8_t note, int8_t velocity) {
+  if (velocity == 0) {
+    note_off(note);
+  } else {
+    note -= LOWEST_NOTE;
 
-  if ((note >= 0) && (note < NUM_NOTES)) {
-    current_note = note + LOWEST_NOTE;
-    shift_out(note_map[note]);
+    if ((note >= 0) && (note < NUM_NOTES)) {
+      current_note = note + LOWEST_NOTE;
+      shift_out(note_map[note]);
+    }
   }
 }
 
