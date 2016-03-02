@@ -26,15 +26,12 @@ void sendByte(uint8_t data) {
   LPC_UART->THR |= data;
 }
 
-uint8_t receiveByte() {
-  //wait for transmitted byte to loop back and be received
-  while (1) {
-    //if Receiver Data Ready bit set (sec 13.5.9)
-    if (LPC_UART->LSR & BIT0) {
-      break;
-    }
+int16_t readByte() {
+  //if Receiver Data Ready bit set (sec 13.5.9)
+  if (LPC_UART->LSR & BIT0) {
+    //store received data (sec 13.5.1)
+    return LPC_UART->RBR & 0x00FF;
+  } else {
+    return -1;
   }
-
-  //store received data (sec 13.5.1)
-  return LPC_UART->RBR;
 }

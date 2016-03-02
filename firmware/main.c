@@ -14,10 +14,12 @@ int main() {
 
   initCLK();
   initServo();
-  //initMIDI();
+  initMIDI();
 
   // Infinite loop
   while (1) {
+    readMIDI();
+
     if (pos >= RANGE) {
       dir = 0;
     } else if (pos <= -RANGE) {

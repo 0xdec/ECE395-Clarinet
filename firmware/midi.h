@@ -5,5 +5,6 @@
 #include "notes.h"
 
 void initMIDI(void);
+void readMIDI(void);
 
 #endif

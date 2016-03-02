@@ -6,6 +6,6 @@
 void initUART(uint8_t prescaler);
 
 void sendByte(uint8_t data);
-uint8_t receiveByte(void);
+int16_t readByte(void);
 
 #endif
