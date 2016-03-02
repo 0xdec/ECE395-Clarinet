@@ -7,6 +7,10 @@ void MIDI_init() {
   // 0x60 (96) gives a baud rate of 31.25 Kbaud
   // 48MHz / 96 / 16 = 31.25KHz
   UART_init(BASE_FREQ / (31250 * 16));
+
+  // TODO: put these in a note_init() function, or merge notes.c into midi.c
+  servo_init();
+  SPI_init();
 }
 
 void MIDI_receive() {
