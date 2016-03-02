@@ -43,11 +43,6 @@ static const uint16_t note_map[NUM_NOTES] = {
 
 static int8_t current_note = -1;
 
-// Sends data MSB first
-static void shift_out(uint16_t data) {
-  SPI_send(data);
-}
-
 void note_on(int8_t note, int8_t velocity) {
   if (velocity == 0) {
     note_off(note);
@@ -57,7 +52,7 @@ void note_on(int8_t note, int8_t velocity) {
     if ((note >= 0) && (note < NUM_NOTES)) {
       current_note = note + LOWEST_NOTE;
       servo_pos(velocity - 64);
-      shift_out(note_map[note]);
+      SPI_send(note_map[note]);
     }
   }
 }
@@ -65,6 +60,6 @@ void note_on(int8_t note, int8_t velocity) {
 void note_off(int8_t note) {
   if (note == current_note) {
     current_note = -1;
-    shift_out(0);
+    SPI_send(0);
   }
 }
