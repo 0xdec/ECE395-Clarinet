@@ -56,6 +56,7 @@ void note_on(int8_t note, int8_t velocity) {
 
     if ((note >= 0) && (note < NUM_NOTES)) {
       current_note = note + LOWEST_NOTE;
+      servo_pos(velocity - 64);
       shift_out(note_map[note]);
     }
   }

@@ -1,6 +1,7 @@
 #ifndef _NOTES_H_
 #define _NOTES_H_
 
+#include "servo.h"
 
 #define LOWEST_NOTE 51
 #define NUM_NOTES   37
