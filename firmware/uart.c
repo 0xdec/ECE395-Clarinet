@@ -9,7 +9,6 @@ void UART_init(uint8_t prescaler) {
 
   // Enable clock for UART (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT12;
-
   // Set UART clock divider value (sec 3.5.16)
   LPC_SYSCON->UARTCLKDIV |= prescaler;
 
@@ -27,9 +26,9 @@ void UART_send(uint8_t data) {
 }
 
 int16_t UART_receive() {
-  //if Receiver Data Ready bit set (sec 13.5.9)
+  // Receiver Data Ready (sec 13.5.9)
   if (LPC_UART->LSR & BIT0) {
-    //store received data (sec 13.5.1)
+    // Receiver Buffer Register (sec 13.5.1)
     return LPC_UART->RBR & 0x00FF;
   } else {
     return -1;
