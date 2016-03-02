@@ -14,6 +14,8 @@ void SPI_init() {
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT18;
   // Set SPI clock divider value (sec 3.5.17)
   LPC_SYSCON->SSP1CLKDIV |= 0x01;
+  // Set SPI clock prescale value (sec 14.6.5)
+  LPC_SYSCON->SSP1CPSR |= 0x02;
 
   // SPI1 reset de-asserted (sec 3.5.2)
   LPC_SYSCON->PRESETCTRL |= BIT2;

@@ -43,6 +43,7 @@ static const uint16_t note_map[NUM_NOTES] = {
 
 static int8_t current_note = -1;
 
+// Sends data MSB first
 static void shift_out(uint16_t data) {
   SPI_send(data >> 8);
   SPI_send(data & 0xFF);
