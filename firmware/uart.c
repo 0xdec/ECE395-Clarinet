@@ -1,7 +1,7 @@
 #include "uart.h"
 
 // Set up UART
-void initUART(uint8_t prescaler) {
+void UART_init(uint8_t prescaler) {
   // Select pin function RXD (sec 7.4.40)
   LPC_IOCON->PIO1_6 |= BIT0;
   // Select pin function TXD (sec 7.4.41)
@@ -21,12 +21,12 @@ void initUART(uint8_t prescaler) {
   LPC_UART->TER |= BIT7;
 }
 
-void sendByte(uint8_t data) {
+void UART_send(uint8_t data) {
   // Transmit data (sec 13.5.2)
   LPC_UART->THR |= data;
 }
 
-int16_t readByte() {
+int16_t UART_receive() {
   //if Receiver Data Ready bit set (sec 13.5.9)
   if (LPC_UART->LSR & BIT0) {
     //store received data (sec 13.5.1)

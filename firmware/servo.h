@@ -6,7 +6,7 @@
 #define PERIOD  20000
 #define NEUTRAL 1500
 
-void initServo(void);
-void servoPos(int16_t pos);
+void servo_init(void);
+void servo_pos(int16_t pos);
 
 #endif

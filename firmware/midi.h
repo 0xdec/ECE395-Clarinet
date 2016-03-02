@@ -4,7 +4,7 @@
 #include "uart.h"
 #include "notes.h"
 
-void initMIDI(void);
-void readMIDI(void);
+void MIDI_init(void);
+void MIDI_receive(void);
 
 #endif

@@ -3,10 +3,10 @@
 
 #include "system.h"
 
-void initPWM(uint16_t period);
-void enablePWM(void);
-void disablePWM(void);
+void PWM_init(uint16_t period);
+void PWM_enable(void);
+void PWM_disable(void);
 
-void setWidth(uint16_t width);
+void PWM_width(uint16_t width);
 
 #endif

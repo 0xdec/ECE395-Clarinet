@@ -1,5 +1,5 @@
 #include "shift.h"
 
-void shiftOut(uint16_t data) {
+void shift_out(uint16_t data) {
   
 }

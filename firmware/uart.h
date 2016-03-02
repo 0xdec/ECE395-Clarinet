@@ -3,9 +3,9 @@
 
 #include "system.h"
 
-void initUART(uint8_t prescaler);
+void UART_init(uint8_t prescaler);
 
-void sendByte(uint8_t data);
-int16_t readByte(void);
+void UART_send(uint8_t data);
+int16_t UART_receive(void);
 
 #endif

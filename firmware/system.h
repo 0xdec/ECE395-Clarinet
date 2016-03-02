@@ -5,6 +5,6 @@
 
 #define BASE_FREQ 48000000UL
 
-void initCLK(void);
+void system_init(void);
 
 #endif

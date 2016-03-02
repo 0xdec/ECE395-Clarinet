@@ -1,7 +1,7 @@
 #include "pwm.h"
 
 // Set up 16 bit timer for PWM
-void initPWM(uint16_t period) {
+void PWM_init(uint16_t period) {
   // Select pin function CT16B0_MAT0 (sec 7.4.23)
   LPC_IOCON->PIO0_8 |= BIT1;
   // Select standard GPIO output mode (sec 7.4.23)
@@ -27,23 +27,23 @@ void initPWM(uint16_t period) {
   LPC_TMR16B0->MR0 = period;
 }
 
-void disablePWM() {
+void PWM_disable() {
   // Disable timer counter (sec 18.7.2)
   LPC_TMR16B0->TCR &= ~BIT0;
 }
-void enablePWM() {
+void PWM_enable() {
   // Enable and reset timer counter (sec 18.7.2)
   LPC_TMR16B0->TCR |= (BIT1 + BIT0);
   // Clear reset bit (sec 18.7.2)
   LPC_TMR16B0->TCR &= ~BIT1;
 }
 
-void setWidth(uint16_t width) {
-  disablePWM();
+void PWM_width(uint16_t width) {
+  PWM_disable();
   // Timer counter match value for pulse width (sec 18.7.7)
   LPC_TMR16B0->MR0 = LPC_TMR16B0->MR1 - width;
-  enablePWM();
+  PWM_enable();
 }
 /* void setDuty(uint8_t duty) {
-  setWidth(pwmPeriod / (100 - duty));
+  PWM_width(pwmPeriod / (100 - duty));
 } */

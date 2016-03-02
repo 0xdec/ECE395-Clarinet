@@ -3,6 +3,6 @@
 
 #include "header.h"
 
-void initGPIO(void);
+void GPIO_init(void);
 
 #endif

@@ -1,7 +1,7 @@
 #include "notes.h"
 
 // Starts at Eb below the staff
-static const uint16_t noteMap[NUM_NOTES] = {
+static const uint16_t note_map[NUM_NOTES] = {
   0x10fe,
   0x40fe,
   0x00fe,
@@ -41,20 +41,20 @@ static const uint16_t noteMap[NUM_NOTES] = {
   0x881b
 };
 
-static int8_t currentNote = -1;
+static int8_t current_note = -1;
 
-void noteOn(int8_t note) {
+void note_on(int8_t note) {
   note -= LOWEST_NOTE;
 
   if ((note >= 0) && (note < NUM_NOTES)) {
-    currentNote = note + LOWEST_NOTE;
-    shiftOut(noteMap[note]);
+    current_note = note + LOWEST_NOTE;
+    shift_out(note_map[note]);
   }
 }
 
-void noteOff(int8_t note) {
-  if (note == currentNote) {
-    currentNote = -1;
-    shiftOut(0);
+void note_off(int8_t note) {
+  if (note == current_note) {
+    current_note = -1;
+    shift_out(0);
   }
 }

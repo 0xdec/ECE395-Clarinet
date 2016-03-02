@@ -12,13 +12,13 @@ int main() {
   int pos = 0;
   int dir = 1;
 
-  initCLK();
-  initServo();
-  initMIDI();
+  system_init();
+  servo_init();
+  MIDI_init();
 
   // Infinite loop
   while (1) {
-    readMIDI();
+    MIDI_receive();
 
     if (pos >= RANGE) {
       dir = 0;
@@ -27,9 +27,9 @@ int main() {
     }
 
     if (dir) {
-      servoPos(pos++);
+      servo_pos(pos++);
     } else {
-      servoPos(pos--);
+      servo_pos(pos--);
     }
 
     delay_ms(2);
