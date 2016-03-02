@@ -24,6 +24,9 @@ void SPI_init() {
 }
 
 void SPI_send(uint16_t data) {
-  // Transmit data (section 14.6.3)
-  LPC_SSP0->DR |= data;
+  // Transmit FIFO not full (sec 14.6.4)
+  if (LPC_SSP0->SR & BIT1) {
+    // Transmit data (sec 14.6.3)
+    LPC_SSP0->DR |= data;
+  }
 }
