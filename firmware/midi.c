@@ -7,17 +7,9 @@ void MIDI_init() {
   // 0x60 (96) gives a baud rate of 31.25 Kbaud
   // 48MHz / 96 / 16 = 31.25KHz
   UART_init(BASE_FREQ / (31250 * 16));
-
-  // Enable the UART interrupt
-  //NVIC_EnableIRQ(UART_IRQn);
-  // Enable RBR interrupt (sec 13.5.4)
-  //LPC_UART->IER |= BIT0;
 }
 
 void MIDI_receive() {
-  /* get the received byte and clear the interrupt */
-  // uint8_t byte = UART_U0RBR;
-
   int16_t data = UART_receive();
   uint8_t byte;
 
