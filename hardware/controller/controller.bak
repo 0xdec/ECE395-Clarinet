@@ -1,0 +1,200 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:nxp_armmcu
+LIBS:LPC1114FN28
+LIBS:controller-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ECE395 Clarinet Controller"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R?
+U 1 1 56D7F277
+P 5600 4050
+F 0 "R?" V 5680 4050 50  0000 C CNN
+F 1 "1k" V 5600 4050 50  0000 C CNN
+F 2 "" V 5530 4050 50  0000 C CNN
+F 3 "" H 5600 4050 50  0000 C CNN
+	1    5600 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 56D7F762
+P 4950 5650
+F 0 "R?" V 5030 5650 50  0000 C CNN
+F 1 "100" V 4950 5650 50  0000 C CNN
+F 2 "" V 4880 5650 50  0000 C CNN
+F 3 "" H 4950 5650 50  0000 C CNN
+	1    4950 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L LPC1114FN28/102 U?
+U 1 1 56D7F9F7
+P 3100 4000
+F 0 "U?" H 3625 5400 60  0000 C CNN
+F 1 "LPC1114FN28/102" H 3600 2600 60  0000 C CNN
+F 2 "" H 3100 4000 60  0000 C CNN
+F 3 "" H 3100 4000 60  0000 C CNN
+	1    3100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 56D7FC5C
+P 5150 4050
+F 0 "D?" H 5150 4150 50  0000 C CNN
+F 1 "LED" H 5150 3950 50  0000 C CNN
+F 2 "" H 5150 4050 50  0000 C CNN
+F 3 "" H 5150 4050 50  0000 C CNN
+	1    5150 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 56D7FD5B
+P 5850 3950
+F 0 "#PWR?" H 5850 3800 50  0001 C CNN
+F 1 "VCC" H 5850 4100 50  0000 C CNN
+F 2 "" H 5850 3950 50  0000 C CNN
+F 3 "" H 5850 3950 50  0000 C CNN
+	1    5850 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 56D7FDB7
+P 1800 2800
+F 0 "#PWR?" H 1800 2650 50  0001 C CNN
+F 1 "VCC" H 1800 2950 50  0000 C CNN
+F 2 "" H 1800 2800 50  0000 C CNN
+F 3 "" H 1800 2800 50  0000 C CNN
+	1    1800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56D7FDD3
+P 1700 4250
+F 0 "#PWR?" H 1700 4000 50  0001 C CNN
+F 1 "GND" H 1700 4100 50  0000 C CNN
+F 2 "" H 1700 4250 50  0000 C CNN
+F 3 "" H 1700 4250 50  0000 C CNN
+	1    1700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIN_5 P?
+U 1 1 56D8006A
+P 5850 1900
+F 0 "P?" H 5850 1900 50  0000 C CNN
+F 1 "DIN_5" H 5850 1750 50  0000 C CNN
+F 2 "" H 5850 1900 50  0000 C CNN
+F 3 "" H 5850 1900 50  0000 C CNN
+	1    5850 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 56D802EF
+P 7550 3250
+F 0 "U?" H 7700 3850 50  0000 C CNN
+F 1 "74HC595" H 7550 2650 50  0000 C CNN
+F 2 "" H 7550 3250 50  0000 C CNN
+F 3 "" H 7550 3250 50  0000 C CNN
+	1    7550 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74HC595 U?
+U 1 1 56D80414
+P 7550 4650
+F 0 "U?" H 7700 5250 50  0000 C CNN
+F 1 "74HC595" H 7550 4050 50  0000 C CNN
+F 2 "" H 7550 4650 50  0000 C CNN
+F 3 "" H 7550 4650 50  0000 C CNN
+	1    7550 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 2800 1800 3850
+Wire Wire Line
+	1800 2900 1900 2900
+Wire Wire Line
+	1800 3850 1900 3850
+Connection ~ 1800 2900
+Wire Wire Line
+	1900 4150 1700 4150
+Wire Wire Line
+	1700 3200 1700 4250
+Wire Wire Line
+	1900 3200 1700 3200
+Connection ~ 1700 4150
+Wire Wire Line
+	5750 4050 5850 4050
+Wire Wire Line
+	5850 4050 5850 3950
+Wire Wire Line
+	5450 4050 5350 4050
+Wire Wire Line
+	8250 3700 8350 3700
+Wire Wire Line
+	8350 3700 8350 3950
+Wire Wire Line
+	8350 3950 6750 3950
+Wire Wire Line
+	6750 3950 6750 4200
+Wire Wire Line
+	6750 4200 6850 4200
+Wire Wire Line
+	6850 4400 6550 4400
+Wire Wire Line
+	6550 4400 6550 3000
+Wire Wire Line
+	6550 3000 6850 3000
+Wire Wire Line
+	6850 3300 6650 3300
+Wire Wire Line
+	6650 3300 6650 4700
+Wire Wire Line
+	6650 4700 6850 4700
+$EndSCHEMATC
