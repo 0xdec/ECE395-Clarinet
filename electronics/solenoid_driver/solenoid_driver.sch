@@ -1,0 +1,170 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:solenoid_driver-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ECE395 Clarinet Solenoid Driver"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L TIP120 Q?
+U 1 1 56D92761
+P 6100 3900
+F 0 "Q?" H 6350 3975 50  0000 L CNN
+F 1 "TIP120" H 6350 3900 50  0000 L CNN
+F 2 "TO-220" H 6350 3825 50  0000 L CIN
+F 3 "" H 6100 3900 50  0000 L CNN
+	1    6100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 56D92796
+P 5750 3900
+F 0 "R?" V 5830 3900 50  0000 C CNN
+F 1 "10k" V 5750 3900 50  0000 C CNN
+F 2 "" V 5680 3900 50  0000 C CNN
+F 3 "" H 5750 3900 50  0000 C CNN
+	1    5750 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 56D9281A
+P 6400 3350
+F 0 "R?" V 6480 3350 50  0000 C CNN
+F 1 "100" V 6400 3350 50  0000 C CNN
+F 2 "" V 6330 3350 50  0000 C CNN
+F 3 "" H 6400 3350 50  0000 C CNN
+	1    6400 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C?
+U 1 1 56D928B9
+P 6000 3350
+F 0 "C?" H 6025 3450 50  0000 L CNN
+F 1 "470u" H 6025 3250 50  0000 L CNN
+F 2 "" H 6038 3200 50  0000 C CNN
+F 3 "" H 6000 3350 50  0000 C CNN
+	1    6000 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D?
+U 1 1 56D929F8
+P 6000 2850
+F 0 "D?" H 6000 2950 50  0000 C CNN
+F 1 "D" H 6000 2750 50  0000 C CNN
+F 2 "" H 6000 2850 50  0000 C CNN
+F 3 "" H 6000 2850 50  0000 C CNN
+	1    6000 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56D92C7A
+P 6200 4200
+F 0 "#PWR?" H 6200 3950 50  0001 C CNN
+F 1 "GND" H 6200 4050 50  0000 C CNN
+F 2 "" H 6200 4200 50  0000 C CNN
+F 3 "" H 6200 4200 50  0000 C CNN
+	1    6200 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +24V #PWR?
+U 1 1 56D92F77
+P 6200 2500
+F 0 "#PWR?" H 6200 2350 50  0001 C CNN
+F 1 "+24V" H 6200 2640 50  0000 C CNN
+F 2 "" H 6200 2500 50  0000 C CNN
+F 3 "" H 6200 2500 50  0000 C CNN
+	1    6200 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L L_Small L?
+U 1 1 56D93049
+P 6800 2700
+F 0 "L?" H 6830 2740 50  0000 L CNN
+F 1 "Solenoid" H 6830 2660 50  0000 L CNN
+F 2 "" H 6800 2700 50  0000 C CNN
+F 3 "" H 6800 2700 50  0000 C CNN
+	1    6800 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 56D930C5
+P 6800 2950
+F 0 "R?" V 6880 2950 50  0000 C CNN
+F 1 "96" V 6800 2950 50  0000 C CNN
+F 2 "" V 6730 2950 50  0000 C CNN
+F 3 "" H 6800 2950 50  0000 C CNN
+	1    6800 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 3600 6200 3700
+Wire Wire Line
+	6000 3600 6400 3600
+Wire Wire Line
+	6000 3500 6000 3600
+Wire Wire Line
+	6400 3600 6400 3500
+Connection ~ 6200 3600
+Wire Wire Line
+	6000 2700 6000 2600
+Wire Wire Line
+	6000 3000 6000 3200
+Connection ~ 6000 3100
+Wire Wire Line
+	6400 3100 6400 3200
+Wire Wire Line
+	6000 3100 6400 3100
+Wire Wire Line
+	6000 2600 6400 2600
+Wire Wire Line
+	6200 2600 6200 2500
+Connection ~ 6200 2600
+Wire Wire Line
+	6200 4200 6200 4100
+$EndSCHEMATC
