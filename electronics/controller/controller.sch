@@ -102,28 +102,6 @@ F 3 "" H 4300 2100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC595 U?
-U 1 1 56D802EF
-P 7600 3250
-F 0 "U?" H 7750 3850 50  0000 C CNN
-F 1 "74HC595" H 7600 2650 50  0000 C CNN
-F 2 "" H 7600 3250 50  0000 C CNN
-F 3 "" H 7600 3250 50  0000 C CNN
-	1    7600 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74HC595 U?
-U 1 1 56D80414
-P 7600 4650
-F 0 "U?" H 7750 5250 50  0000 C CNN
-F 1 "74HC595" H 7600 4050 50  0000 C CNN
-F 2 "" H 7600 4650 50  0000 C CNN
-F 3 "" H 7600 4650 50  0000 C CNN
-	1    7600 4650
-	1    0    0    -1  
-$EndComp
-$Comp
 L 6N138 OC?
 U 1 1 56D87D42
 P 5400 1700
@@ -259,26 +237,6 @@ Wire Wire Line
 	1900 3200 1700 3200
 Connection ~ 1700 4150
 Wire Wire Line
-	8300 3700 8300 3700
-Wire Wire Line
-	8300 3700 8300 3950
-Wire Wire Line
-	8300 3950 6900 3950
-Wire Wire Line
-	6900 3950 6900 4200
-Wire Wire Line
-	6900 4400 6700 4400
-Wire Wire Line
-	6700 4400 6700 3000
-Wire Wire Line
-	6700 3000 6900 3000
-Wire Wire Line
-	6900 3300 6800 3300
-Wire Wire Line
-	6800 3300 6800 4700
-Wire Wire Line
-	6800 4700 6900 4700
-Wire Wire Line
 	5900 1500 5900 1500
 Wire Wire Line
 	5900 1500 5900 1300
@@ -322,7 +280,6 @@ Wire Wire Line
 Connection ~ 8800 3100
 Wire Wire Line
 	8300 2800 8500 2800
-Connection ~ 8400 2800
 Wire Wire Line
 	9200 1900 9200 1950
 Connection ~ 9200 1950
@@ -426,11 +383,8 @@ Wire Wire Line
 Wire Wire Line
 	4300 3850 6600 3850
 Wire Wire Line
-	6600 3850 6600 2800
-Wire Wire Line
-	6600 2800 6900 2800
-Wire Wire Line
 	4300 4850 6100 4850
 Wire Wire Line
 	6100 4850 6100 1700
+Connection ~ 8400 2800
 $EndSCHEMATC

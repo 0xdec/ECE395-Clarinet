@@ -245,9 +245,7 @@ F 3 "" H 9000 1950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1800 2800 1800 2900
-Wire Wire Line
-	1800 2900 1800 3850
+	1800 2800 1800 3850
 Wire Wire Line
 	1800 2900 1900 2900
 Wire Wire Line
@@ -256,9 +254,7 @@ Connection ~ 1800 2900
 Wire Wire Line
 	1900 4150 1700 4150
 Wire Wire Line
-	1700 3200 1700 4150
-Wire Wire Line
-	1700 4150 1700 4250
+	1700 3200 1700 4250
 Wire Wire Line
 	1900 3200 1700 3200
 Connection ~ 1700 4150
@@ -291,27 +287,19 @@ Wire Wire Line
 Wire Wire Line
 	6000 1900 6000 2000
 Wire Wire Line
-	5900 1700 6000 1700
-Wire Wire Line
-	6000 1700 6100 1700
+	5900 1700 6100 1700
 Wire Wire Line
 	6000 1700 6000 1650
 Wire Wire Line
-	5900 1300 5950 1300
-Wire Wire Line
-	5950 1300 6000 1300
+	5900 1300 6000 1300
 Connection ~ 5950 1300
 Connection ~ 6000 1700
 Wire Wire Line
-	4700 1900 4800 1900
-Wire Wire Line
-	4800 1900 4900 1900
+	4700 1900 4900 1900
 Wire Wire Line
 	4800 1900 4800 1850
 Wire Wire Line
-	4700 1500 4800 1500
-Wire Wire Line
-	4800 1500 4900 1500
+	4700 1500 4900 1500
 Wire Wire Line
 	4800 1500 4800 1550
 Connection ~ 4800 1500
@@ -325,9 +313,7 @@ Wire Wire Line
 Wire Wire Line
 	8800 3000 8800 3100
 Wire Wire Line
-	8800 2400 8800 2550
-Wire Wire Line
-	8800 2550 8800 2600
+	8800 2400 8800 2600
 Wire Wire Line
 	8800 2550 9200 2550
 Connection ~ 8800 2550
@@ -335,9 +321,7 @@ Wire Wire Line
 	8800 3100 8400 3100
 Connection ~ 8800 3100
 Wire Wire Line
-	8300 2800 8400 2800
-Wire Wire Line
-	8400 2800 8500 2800
+	8300 2800 8500 2800
 Connection ~ 8400 2800
 Wire Wire Line
 	9200 1900 9200 1950
@@ -411,13 +395,9 @@ F 3 "" H 8900 4400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8900 3500 8900 3550
+	8900 3500 8900 3600
 Wire Wire Line
-	8900 3550 8900 3600
-Wire Wire Line
-	8900 3900 8900 3950
-Wire Wire Line
-	8900 3950 8900 4000
+	8900 3900 8900 4000
 Wire Wire Line
 	8900 3550 9000 3550
 Connection ~ 8900 3550
@@ -443,4 +423,14 @@ Wire Wire Line
 	9000 3550 9000 3450
 Wire Wire Line
 	9000 3450 9200 3450
+Wire Wire Line
+	4300 3850 6600 3850
+Wire Wire Line
+	6600 3850 6600 2800
+Wire Wire Line
+	6600 2800 6900 2800
+Wire Wire Line
+	4300 4850 6100 4850
+Wire Wire Line
+	6100 4850 6100 1700
 $EndSCHEMATC
