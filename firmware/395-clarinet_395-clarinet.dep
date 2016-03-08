@@ -1,143 +1,170 @@
 Dependencies for Project '395-clarinet', Target '395-clarinet': (DO NOT MODIFY !)
-F (.\startup_LPC11xx.s)(0x511A9F5E)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx--pd "__UVISION_VERSION SETA 518"--list .\startup_lpc11xx.lst --xref -o .\startup_lpc11xx.o --depend .\startup_lpc11xx.d)
-F (.\system_LPC11xx.c)(0x511A9F60)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\system_lpc11xx.o --omf_browse .\system_lpc11xx.crf --depend .\system_lpc11xx.d)
+F (.\startup_LPC11xx.s)(0x56DF5ADC)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx--pd "__UVISION_VERSION SETA 518"--list .\startup_lpc11xx.lst --xref -o .\startup_lpc11xx.o --depend .\startup_lpc11xx.d)
+F (.\system_LPC11xx.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\system_lpc11xx_1.o --omf_browse .\system_lpc11xx_1.crf --depend .\system_lpc11xx_1.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\LPC11xx.h)(0x55AFA95C)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\Serial.c)(0x511A9F62)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\serial.o --omf_browse .\serial.crf --depend .\serial.d)
+F (.\Serial.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\serial.o --omf_browse .\serial.crf --depend .\serial.d)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\LPC11xx.h)(0x55AFA95C)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\Retarget.c)(0x511A9F60)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\retarget.o --omf_browse .\retarget.crf --depend .\retarget.d)
+F (.\Retarget.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\retarget.o --omf_browse .\retarget.crf --depend .\retarget.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
-F (.\main.c)(0x56D0D96D)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (firmware/header.h)(0x56D0A232)
+F (.\main.c)(0x56DF5BAD)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware/include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-I (firmware/system.h)(0x56D0C2B9)
-I (firmware/servo.h)(0x56D0D7C2)
-I (firmware/pwm.h)(0x56D0D7C2)
-I (firmware/midi.h)(0x56D083D1)
-I (firmware/uart.h)(0x56D083D1)
-I (firmware/notes.h)(0x56D083D1)
-I (firmware/delay.h)(0x56D083D1)
-F (.\firmware\delay.c)(0x56D0A3C7)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\delay.o --omf_browse .\delay.crf --depend .\delay.d)
-I (firmware\delay.h)(0x56D083D1)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+I (system.h)(0x56DF5ADC)
+I (midi.h)(0x56DF5ADC)
+I (uart.h)(0x56DF5ADC)
+I (notes.h)(0x56DF5ADC)
+I (servo.h)(0x56DF5ADC)
+I (pwm.h)(0x56DF5ADC)
+I (spi.h)(0x56DF5ADC)
+I (delay.h)(0x56DF5ADC)
+F (.\delay.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\delay.o --omf_browse .\delay.crf --depend .\delay.d)
+I (delay.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\gpio.c)(0x56D083D1)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
-I (firmware\gpio.h)(0x56D083D1)
-I (firmware\header.h)(0x56D0A232)
+F (.\gpio.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
+I (gpio.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\midi.c)(0x56D0A448)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\midi.o --omf_browse .\midi.crf --depend .\midi.d)
-I (firmware\midi.h)(0x56D083D1)
-I (firmware\uart.h)(0x56D083D1)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+F (.\midi.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\midi.o --omf_browse .\midi.crf --depend .\midi.d)
+I (midi.h)(0x56DF5ADC)
+I (uart.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-I (firmware\notes.h)(0x56D083D1)
-F (.\firmware\notes.c)(0x56D0AACC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\notes.o --omf_browse .\notes.crf --depend .\notes.d)
-I (firmware\notes.h)(0x56D083D1)
-I (firmware\header.h)(0x56D0A232)
+I (notes.h)(0x56DF5ADC)
+I (servo.h)(0x56DF5ADC)
+I (pwm.h)(0x56DF5ADC)
+I (spi.h)(0x56DF5ADC)
+F (.\notes.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\notes.o --omf_browse .\notes.crf --depend .\notes.d)
+I (notes.h)(0x56DF5ADC)
+I (servo.h)(0x56DF5ADC)
+I (pwm.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\pwm.c)(0x56D0D96D)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\pwm.o --omf_browse .\pwm.crf --depend .\pwm.d)
-I (firmware\pwm.h)(0x56D0D7C2)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+I (spi.h)(0x56DF5ADC)
+F (.\pwm.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\pwm.o --omf_browse .\pwm.crf --depend .\pwm.d)
+I (pwm.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\servo.c)(0x56D0D7C2)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
-I (firmware\servo.h)(0x56D0D7C2)
-I (firmware\pwm.h)(0x56D0D7C2)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+F (.\servo.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
+I (servo.h)(0x56DF5ADC)
+I (pwm.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\system.c)(0x56D083D1)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\system.o --omf_browse .\system.crf --depend .\system.d)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+F (.\spi.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
+I (spi.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\uart.c)(0x56D083D1)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
-I (firmware\uart.h)(0x56D083D1)
-I (firmware\system.h)(0x56D0C2B9)
-I (firmware\header.h)(0x56D0A232)
+F (.\system.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\system.o --omf_browse .\system.crf --depend .\system.d)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
-I (firmware\include/LPC11xx.h)(0x56D0A340)
+I (include/LPC11xx.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\firmware\delay.h)(0x56D083D1)()
-F (.\firmware\gpio.h)(0x56D083D1)()
-F (.\firmware\header.h)(0x56D0A232)()
-F (.\firmware\midi.h)(0x56D083D1)()
-F (.\firmware\notes.h)(0x56D083D1)()
-F (.\firmware\pwm.h)(0x56D0D7C2)()
-F (.\firmware\servo.h)(0x56D0D7C2)()
-F (.\firmware\system.h)(0x56D0C2B9)()
-F (.\firmware\uart.h)(0x56D083D1)()
+F (.\system_LPC11xx.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\system_lpc11xx_1.o --omf_browse .\system_lpc11xx_1.crf --depend .\system_lpc11xx_1.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
+I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\LPC11xx.h)(0x55AFA95C)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
+F (.\uart.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+I (uart.h)(0x56DF5ADC)
+I (system.h)(0x56DF5ADC)
+I (header.h)(0x56DF5ADC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569EAF1A)
+I (include/LPC11xx.h)(0x56DF5ADC)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
+I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
+F (.\delay.h)(0x56DF5ADC)()
+F (.\gpio.h)(0x56DF5ADC)()
+F (.\hardware.h)(0x56DF5ADC)()
+F (.\header.h)(0x56DF5ADC)()
+F (.\midi.h)(0x56DF5ADC)()
+F (.\notes.h)(0x56DF5ADC)()
+F (.\pwm.h)(0x56DF5ADC)()
+F (.\servo.h)(0x56DF5ADC)()
+F (.\spi.h)(0x56DF5ADC)()
+F (.\uart.h)(0x56DF5ADC)()

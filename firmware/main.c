@@ -9,11 +9,11 @@
 
 int main() {
   system_init();
-  MIDI_init();
+  //MIDI_init();
 
   // Infinite loop
   while (1) {
-    MIDI_receive();
+    //MIDI_receive();
     delay_ms(2);
   }
 
