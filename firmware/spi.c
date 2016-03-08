@@ -3,11 +3,13 @@
 void SPI_init() {
   // Select pin function SSEL0 (sec 7.4.6)
   LPC_IOCON->PIO0_2 = (LPC_IOCON->PIO0_2 & ~BIT1) | BIT0;
+  // Select pin function SCK0 (sec 7.4.18)
+  LPC_IOCON->PIO0_6 = (LPC_IOCON->PIO0_6 & ~BIT0) | BIT1;
   // Select pin function MOSI0 (sec 7.4.24)
   LPC_IOCON->PIO0_9 = (LPC_IOCON->PIO0_9 & ~BIT1) | BIT0;
-  // Select pin function SCK0 (sec 7.4.25)
-  LPC_IOCON->SWCLK_PIO0_10 = (LPC_IOCON->SWCLK_PIO0_10 & ~BIT0) | BIT1;
 
+  // Select SCK0 function in pin location PIO0_6 (sec 7.4.43)
+  LPC_IOCON->SCK_LOC |= PIN1;
   // SPI0 reset de-asserted (sec 3.5.2)
   LPC_SYSCON->PRESETCTRL |= BIT0;
   // Enable clock for SPI0 (sec 3.5.14)
