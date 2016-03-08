@@ -270,10 +270,15 @@ var create = function(val) {
   var note = notes[num];
   var prevNote = notes[current];
 
-  note.number = val || prevNote.number || 0;
+  if (val === undefined) {
+    val = prevNote.number;
+  }
+
+  note.number = val || 0;
   note.binary = '';
   note.hex = '';
   note.keys = {};
+
   for (var i = 0; i < 16; i++) {
     note.keys[i] = Boolean((note.number >> i) & 1);
   }
