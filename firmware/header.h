@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "include/LPC11xx.h"
+#include "LPC11xx/LPC11xx.h"
 
 // Bitmasks
 #define BIT0 (1 << 0)
