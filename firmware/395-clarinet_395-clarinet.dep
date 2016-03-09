@@ -19,7 +19,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
-F (.\main.c)(0x56DF5BAD)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x56DF6513)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569EAF1A)
@@ -30,11 +30,6 @@ I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
 I (system.h)(0x56DF5ADC)
-I (midi.h)(0x56DF5ADC)
-I (uart.h)(0x56DF5ADC)
-I (notes.h)(0x56DF5ADC)
-I (servo.h)(0x56DF5ADC)
-I (pwm.h)(0x56DF5ADC)
 I (spi.h)(0x56DF5ADC)
 I (delay.h)(0x56DF5ADC)
 F (.\delay.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\delay.o --omf_browse .\delay.crf --depend .\delay.d)
@@ -117,7 +112,7 @@ I (C:\Keil_v5\ARM\CMSIS\Include\core_cm0.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AFAB90)
 I (C:\Keil_v5\ARM\Inc\NXP\LPC11xx\system_LPC11xx.h)(0x55AFA95C)
-F (.\spi.c)(0x56DF5ADC)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
+F (.\spi.c)(0x56DF617C)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC11xx-D__UVISION_VERSION="518"-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
 I (spi.h)(0x56DF5ADC)
 I (header.h)(0x56DF5ADC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569EAF1A)

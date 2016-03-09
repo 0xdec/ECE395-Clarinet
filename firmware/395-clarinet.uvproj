@@ -411,87 +411,102 @@
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\delay.c</FilePath>
+              <FilePath>.\delay.c</FilePath>
             </File>
             <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\gpio.c</FilePath>
+              <FilePath>.\gpio.c</FilePath>
             </File>
             <File>
               <FileName>midi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\midi.c</FilePath>
+              <FilePath>.\midi.c</FilePath>
             </File>
             <File>
               <FileName>notes.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\notes.c</FilePath>
+              <FilePath>.\notes.c</FilePath>
             </File>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\pwm.c</FilePath>
+              <FilePath>.\pwm.c</FilePath>
             </File>
             <File>
               <FileName>servo.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\servo.c</FilePath>
+              <FilePath>.\servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\spi.c</FilePath>
             </File>
             <File>
               <FileName>system.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\system.c</FilePath>
+              <FilePath>.\system.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_LPC11xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\system_LPC11xx.c</FilePath>
             </File>
             <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\firmware\uart.c</FilePath>
+              <FilePath>.\uart.c</FilePath>
             </File>
             <File>
               <FileName>delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\delay.h</FilePath>
+              <FilePath>.\delay.h</FilePath>
             </File>
             <File>
               <FileName>gpio.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\gpio.h</FilePath>
+              <FilePath>.\gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>hardware.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hardware.h</FilePath>
             </File>
             <File>
               <FileName>header.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\header.h</FilePath>
+              <FilePath>.\header.h</FilePath>
             </File>
             <File>
               <FileName>midi.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\midi.h</FilePath>
+              <FilePath>.\midi.h</FilePath>
             </File>
             <File>
               <FileName>notes.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\notes.h</FilePath>
+              <FilePath>.\notes.h</FilePath>
             </File>
             <File>
               <FileName>pwm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\pwm.h</FilePath>
+              <FilePath>.\pwm.h</FilePath>
             </File>
             <File>
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\servo.h</FilePath>
+              <FilePath>.\servo.h</FilePath>
             </File>
             <File>
-              <FileName>system.h</FileName>
+              <FileName>spi.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\system.h</FilePath>
+              <FilePath>.\spi.h</FilePath>
             </File>
             <File>
               <FileName>uart.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\firmware\uart.h</FilePath>
+              <FilePath>.\uart.h</FilePath>
             </File>
           </Files>
         </Group>
