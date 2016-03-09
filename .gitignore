@@ -1,11 +1,12 @@
 reference
 
-*.o
-*.d
-*.crf
-*.htm
-*.lnp
-*.map
-*.axf
-*.build_log.htm
-*.dep
+firmware/*.axf
+firmware/*.crf
+firmware/*.d
+firmware/*.dep
+firmware/*.htm
+firmware/*.iex
+firmware/*.lnp
+firmware/*.map
+firmware/*.o
+firmware/*.uvgui.*
