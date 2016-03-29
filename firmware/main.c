@@ -1,18 +1,15 @@
 #include "header.h"
 
 #include "system.h"
-#include "spi.h"
 #include "delay.h"
+#include "midi.h"
 
 int main() {
-  uint8_t i = 0;
   system_init();
-  SPI_init();
+  MIDI_init();
 
   while (1) {
-    SPI_send(i);
-    delay_ms(100);
-    i++;
+    MIDI_receive();
   }
 
   return 0;
