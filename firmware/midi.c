@@ -57,6 +57,14 @@ void MIDI_receive() {
           case 0x90: // Note On
             note_on(MIDI_buffer[1], MIDI_buffer[2]);
             break;
+          case 0xC0: // Program Change
+            // Program 72 is the Clarinet
+            if (MIDI_buffer[1] == 0x47) {
+              note_transpose(2);
+            } else {
+              note_transpose(0);
+            }
+            break;
           default:
             break;
         }
