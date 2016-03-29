@@ -43,6 +43,11 @@ static const uint16_t note_map[NUM_NOTES] = {
 
 static int8_t current_note = -1;
 
+void note_init() {
+  servo_init();
+  SPI_init();
+}
+
 // TODO: map from note velocity to servo position/air pressure. A velocity of 64
 // is the default MIDI velocity, so should be handled as such. A velocity of 0
 // is equivalent to a note_off command.
