@@ -4,7 +4,7 @@ static uint8_t MIDI_channel;
 static uint8_t MIDI_buffer[3];
 static uint8_t MIDI_remaining = 0;
 
-void MIDI_init(uint8_t channel = 1) {
+void MIDI_init(uint8_t channel) {
   // Define the channel the clarinet will listen on (1 to 16, defaults to 1)
   channel -= 1;
   if (channel < 16) {

@@ -9,7 +9,7 @@ int main() {
   MIDI_init();
 
   while (1) {
-    MIDI_receive();
+    MIDI_receive(1);
   }
 
   return 0;
