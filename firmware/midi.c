@@ -5,9 +5,10 @@ static uint8_t MIDI_buffer[3];
 static uint8_t MIDI_remaining = 0;
 
 void MIDI_init(uint8_t channel) {
-  // Define the channel the clarinet will listen on (1 to 16, defaults to 1)
+  // Define the channel the clarinet will listen on. Defaults to 1. Range is
+  // from 1 to 16, excluding channel 10 (reserved for percussion).
   channel -= 1;
-  if (channel < 16) {
+  if ((channel < 16) && (channel != 9)) {
     MIDI_channel = channel;
   } else {
     MIDI_channel = 0;
