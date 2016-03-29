@@ -4,9 +4,6 @@
 #include "spi.h"
 #include "delay.h"
 
-#define RANGE 800
-#define ANGLE 90
-
 int main() {
   uint8_t i = 0;
   system_init();
