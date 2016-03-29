@@ -1,9 +1,18 @@
 #include "midi.h"
 
+static uint8_t MIDI_channel;
 static uint8_t MIDI_buffer[3];
 static uint8_t MIDI_remaining = 0;
 
-void MIDI_init() {
+void MIDI_init(uint8_t channel = 1) {
+  // Define the channel the clarinet will listen on (1 to 16, defaults to 1)
+  channel -= 1;
+  if (channel < 16) {
+    MIDI_channel = channel;
+  } else {
+    MIDI_channel = 0;
+  }
+
   // 0x60 (96) gives a baud rate of 31.25 Kbaud
   // 48MHz / 96 / 16 = 31.25KHz
   UART_init(BASE_FREQ / (31250 * 16));
@@ -23,7 +32,7 @@ void MIDI_receive() {
       // Status byte
       MIDI_buffer[0] = byte;
 
-      switch (byte) {
+      switch (byte ^ MIDI_channel) {
         case 0x80: // Note Off
         case 0x90: // Note On
         case 0xA0: // Aftertouch
@@ -50,7 +59,7 @@ void MIDI_receive() {
       }
 
       if (MIDI_remaining <= 0) {
-        switch (MIDI_buffer[0]) {
+        switch (MIDI_buffer[0] ^ MIDI_channel) {
           case 0x80: // Note Off
             note_off(MIDI_buffer[1]);
             break;

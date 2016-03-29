@@ -4,7 +4,7 @@
 #include "uart.h"
 #include "notes.h"
 
-void MIDI_init(void);
+void MIDI_init(uint8_t channel);
 void MIDI_receive(void);
 
 #endif
