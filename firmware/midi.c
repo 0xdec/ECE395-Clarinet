@@ -45,12 +45,12 @@ void MIDI_receive() {
         case 0xD0: // Channel Pressure
           MIDI_remaining = 1;
           break;
-        case 0xFE: // Ignore active sense
-          break;
+        case 0xFE: // Active Sense
         case 0xFC: // Stop
         case 0xFF: // Reset
         default:
           MIDI_remaining = 0;
+          break;
       }
     } else {
       // Data byte
