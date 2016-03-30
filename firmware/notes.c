@@ -45,7 +45,7 @@ static int8_t current_note = -1;
 static int8_t lowest_note = LOWEST_NOTE;
 
 void note_init() {
-  servo_init();
+  servo_init(63);
   SPI_init();
 }
 

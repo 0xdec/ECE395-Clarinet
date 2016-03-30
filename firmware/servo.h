@@ -3,12 +3,13 @@
 
 #include "pwm.h"
 
+// Assumes that 1.5ms is the center-point and 2ms corresponds to 90deg
 #define PERIOD  20000
 #define NEUTRAL 1500
-#define RANGE   800
+#define RANGE   500
 #define ANGLE   90
 
-void servo_init(void);
-void servo_pos(int16_t pos);
+void servo_init(int8_t range);
+void servo_pos(int8_t deg);
 
 #endif
