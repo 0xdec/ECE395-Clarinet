@@ -25,12 +25,17 @@ void UART_send(uint8_t data) {
   LPC_UART->THR |= data;
 }
 
-int16_t UART_receive() {
-  // Receiver Data Ready (sec 13.5.9)
-  if (LPC_UART->LSR & BIT0) {
-    // Receiver Buffer Register (sec 13.5.1)
-    return LPC_UART->RBR & 0x00FF;
+uint8_t UART_available() {
+  // Overrun Error (sec 13.5.9)
+  if (LPC_UART->LSR & BIT1) {
+    return 16;
   } else {
-    return -1;
+    // Receiver Data Ready (sec 13.5.9)
+    return LPC_UART->LSR & BIT0;
   }
+}
+
+uint8_t UART_receive() {
+  // Receiver Buffer Register (sec 13.5.1)
+  return LPC_UART->RBR & 0xFF;
 }
