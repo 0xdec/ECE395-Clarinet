@@ -4,6 +4,8 @@
 #include "uart.h"
 #include "notes.h"
 
+#define MIDI_BAUD 31250
+
 void MIDI_init(uint8_t chan);
 void MIDI_receive(void);
 

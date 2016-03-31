@@ -14,9 +14,8 @@ void MIDI_init(uint8_t chan) {
     channel = chan;
   }
 
-  // 0x60 (96) gives a baud rate of 31.25 Kbaud
-  // 48MHz / 96 / 16 = 31.25KHz
-  UART_init(BASE_FREQ / (31250 * 16));
+  // A 48MHz clock and a prescaler of 0x60 (96) gives a baud rate of 31.25 Kbaud
+  UART_init(BASE_FREQ / (MIDI_BAUD * 16));
   note_init();
 }
 
