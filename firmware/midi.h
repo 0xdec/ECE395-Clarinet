@@ -2,7 +2,7 @@
 #define _MIDI_H_
 
 #include "uart.h"
-#include "notes.h"
+#include "note.h"
 
 #define MIDI_BAUD 31250
 

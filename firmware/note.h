@@ -1,5 +1,5 @@
-#ifndef _NOTES_H_
-#define _NOTES_H_
+#ifndef _NOTE_H_
+#define _NOTE_H_
 
 #include "servo.h"
 #include "spi.h"

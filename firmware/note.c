@@ -1,4 +1,4 @@
-#include "notes.h"
+#include "note.h"
 
 // Starts at F below the staff
 static const uint16_t note_map[NUM_NOTES] = {
