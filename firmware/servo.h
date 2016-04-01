@@ -9,7 +9,7 @@
 #define RANGE   500
 #define ANGLE   90
 
-void servo_init(int8_t range);
-void servo_pos(int8_t deg);
+void servo_init(int8_t);
+void servo_pos(int8_t);
 
 #endif

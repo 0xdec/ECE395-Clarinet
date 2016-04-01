@@ -1,7 +1,6 @@
 #include "header.h"
 
 #include "system.h"
-#include "delay.h"
 #include "midi.h"
 
 int main() {

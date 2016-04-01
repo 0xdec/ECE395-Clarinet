@@ -4,6 +4,6 @@
 #include "header.h"
 
 void SPI_init(void);
-void SPI_send(uint16_t data);
+void SPI_send(uint16_t);
 
 #endif
