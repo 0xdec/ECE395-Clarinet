@@ -76,3 +76,7 @@ void note_off(int8_t note) {
 void note_transpose(int8_t interval) {
   lowest_note = LOWEST_NOTE + interval;
 }
+
+int8_t note_get() {
+  return current_note;
+}

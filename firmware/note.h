@@ -12,4 +12,6 @@ void note_on(int8_t, int8_t);
 void note_off(int8_t);
 void note_transpose(int8_t);
 
+int8_t note_get(void);
+
 #endif
