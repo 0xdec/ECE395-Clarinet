@@ -78,6 +78,9 @@ static void MIDI_voice() {
     case 0x90: // Note On
       note_on(message[1], message[2]);
       break;
+    case 0xA0: // Aftertouch
+      note_volume(message[1], message[2]);
+      break;
     case 0xC0: // Program Change
       // Program 72 is the Clarinet
       if (message[1] == 0x47) {
@@ -85,6 +88,9 @@ static void MIDI_voice() {
       } else {
         note_transpose(0);
       }
+      break;
+    case 0xD0: // Channel Pressure
+      note_volume(note_get(), message[1]);
       break;
     default:
       break;

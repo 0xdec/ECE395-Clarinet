@@ -49,27 +49,32 @@ void note_init() {
   SPI_init();
 }
 
-// TODO: map from note velocity to servo position/air pressure. A velocity of 64
-// is the default MIDI velocity, so should be handled as such. A velocity of 0
-// is equivalent to a note_off command.
 void note_on(int8_t note, int8_t velocity) {
-  if (velocity == 0) {
-    note_off(note);
-  } else {
-    note -= lowest_note;
+  int8_t note_offset = note - lowest_note;
 
-    if ((note >= 0) && (note < NUM_NOTES)) {
-      current_note = note + lowest_note;
-      servo_pos(velocity - 64);
-      SPI_send(note_map[note]);
-    }
+  if (velocity == 0) {
+    // A velocity of 0 is equivalent to a note_off command
+    note_off(note);
+  } else if ((note_offset >= 0) && (note_offset < NUM_NOTES)) {
+    current_note = note;
+    note_volume(note, velocity);
+    SPI_send(note_map[note_offset]);
   }
 }
 
 void note_off(int8_t note) {
-  if (note == current_note) {
-    current_note = -1;
+  if (COMPARE(note, current_note)) {
+    note_volume(note, 0);
     SPI_send(0);
+    current_note = -1;
+  }
+}
+
+// TODO: map from note velocity to servo position/air pressure. A velocity of 64
+// is the default MIDI velocity, so should be handled as such.
+void note_volume(int8_t note, int8_t volume) {
+  if (COMPARE(note, current_note)) {
+    servo_pos(volume - 64);
   }
 }
 
