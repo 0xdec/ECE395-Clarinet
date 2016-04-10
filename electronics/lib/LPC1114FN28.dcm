@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LPC1114FN28/102
+D 32-bit ARM Cortex-M0 microcontroller, 32kB Flash, 4kB SRAM, UART, I2C, SPI, ADC 6ch
+K ARM, 32bit, CortexM0, M0, NXP, Microcontroller
+$ENDCMP
+#
+#End Doc Library
