@@ -1,0 +1,193 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:LPC1114FN28
+LIBS:optocoupler-2
+LIBS:optocoupler
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 6N138 OK?
+U 1 1 570CF73B
+P 5600 4000
+F 0 "OK?" H 5225 4325 50  0000 L BNN
+F 1 "6N138" H 5225 3600 50  0000 L BNN
+F 2 "optocoupler-2-DIL08" H 5600 4150 50  0001 C CNN
+F 3 "" H 5600 4000 60  0000 C CNN
+	1    5600 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIN_5 P?
+U 1 1 570CF7D8
+P 4700 4400
+F 0 "P?" H 4700 4400 50  0000 C CNN
+F 1 "DIN_5" H 4700 4250 50  0000 C CNN
+F 2 "" H 4700 4400 50  0000 C CNN
+F 3 "" H 4700 4400 50  0000 C CNN
+	1    4700 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D?
+U 1 1 570CF807
+P 5100 3950
+F 0 "D?" H 5100 4050 50  0000 C CNN
+F 1 "D" H 5100 3850 50  0000 C CNN
+F 2 "" H 5100 3950 50  0000 C CNN
+F 3 "" H 5100 3950 50  0000 C CNN
+	1    5100 3950
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 570CF868
+P 4700 3800
+F 0 "R?" V 4780 3800 50  0000 C CNN
+F 1 "220" V 4700 3800 50  0000 C CNN
+F 2 "" V 4630 3800 50  0000 C CNN
+F 3 "" H 4700 3800 50  0000 C CNN
+	1    4700 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 570CF8EF
+P 6350 3900
+F 0 "R?" V 6430 3900 50  0000 C CNN
+F 1 "10k" V 6350 3900 50  0000 C CNN
+F 2 "" V 6280 3900 50  0000 C CNN
+F 3 "" H 6350 3900 50  0000 C CNN
+	1    6350 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 570CF95E
+P 6500 4400
+F 0 "#PWR?" H 6500 4150 50  0001 C CNN
+F 1 "GND" H 6500 4250 50  0000 C CNN
+F 2 "" H 6500 4400 50  0000 C CNN
+F 3 "" H 6500 4400 50  0000 C CNN
+	1    6500 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 570CFA6D
+P 6700 3850
+F 0 "R?" V 6780 3850 50  0000 C CNN
+F 1 "220" V 6700 3850 50  0000 C CNN
+F 2 "" V 6630 3850 50  0000 C CNN
+F 3 "" H 6700 3850 50  0000 C CNN
+	1    6700 3850
+	-1   0    0    1   
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 570CFAC8
+P 6500 3600
+F 0 "#PWR?" H 6500 3450 50  0001 C CNN
+F 1 "+3.3V" H 6500 3740 50  0000 C CNN
+F 2 "" H 6500 3600 50  0000 C CNN
+F 3 "" H 6500 3600 50  0000 C CNN
+	1    6500 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 4100 5100 4200
+Connection ~ 5100 4200
+Wire Wire Line
+	5100 3800 5100 3800
+Connection ~ 5100 3800
+Wire Wire Line
+	5100 3800 4850 3800
+Wire Wire Line
+	4550 3800 4300 3800
+Wire Wire Line
+	4300 3800 4300 4200
+Wire Wire Line
+	6500 3600 6500 3700
+Connection ~ 6500 3700
+Wire Wire Line
+	6100 4000 6700 4000
+Wire Wire Line
+	6700 4000 7000 4000
+Wire Wire Line
+	6100 3700 6500 3700
+Wire Wire Line
+	6500 3700 6700 3700
+Wire Wire Line
+	6700 3700 6900 3700
+Wire Wire Line
+	6100 3800 6100 3700
+$Comp
+L CONN_01X04 P?
+U 1 1 570CFC08
+P 7200 4150
+F 0 "P?" H 7200 4400 50  0000 C CNN
+F 1 "UART" V 7300 4150 50  0000 C CNN
+F 2 "" H 7200 4150 50  0000 C CNN
+F 3 "" H 7200 4150 50  0000 C CNN
+	1    7200 4150
+	1    0    0    -1  
+$EndComp
+Connection ~ 6700 4000
+Wire Wire Line
+	6100 4300 6500 4300
+Wire Wire Line
+	6500 4300 7000 4300
+Wire Wire Line
+	6500 3900 6500 4300
+Wire Wire Line
+	6500 4300 6500 4400
+Wire Wire Line
+	6100 4200 6100 4300
+Connection ~ 6500 4300
+Wire Wire Line
+	7000 4200 6900 4200
+Wire Wire Line
+	6900 4200 6900 3700
+Connection ~ 6700 3700
+Wire Wire Line
+	6200 3900 6100 3900
+$EndSCHEMATC
