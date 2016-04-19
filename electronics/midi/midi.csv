@@ -1,0 +1,10 @@
+Reference, Value, Footprint, Datasheet
+OK1,6N138,Housings_DIP:DIP-8_W7.62mm,
+D1,D,Diodes_SMD:SOD-123,
+R1,220,Resistors_SMD:R_0603_HandSoldering,
+R3,1k,Resistors_SMD:R_0603_HandSoldering,
+P4,UART,Connectors_JST_SH:Connectors_JST_BM04B-SRSS-TB,
+R2,220,Resistors_SMD:R_0603_HandSoldering,
+P1,DIN_5,Connect:SDS-50J,
+P2,CONN_01X04,Pin_Headers:Pin_Header_Straight_1x04,
+P3,CONN_01X04,Pin_Headers:Pin_Header_Straight_1x04,

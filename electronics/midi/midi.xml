@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/Users/jordi/Documents/GitHub/ECE395-Clarinet/electronics/midi/midi.sch</source>
+    <date>Thursday, April 14, 2016 'PMt' 11:26:47 PM</date>
+    <tool>Eeschema 4.0.1-stable</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>ECE395 Clarinet MIDI</title>
+        <company/>
+        <rev/>
+        <date/>
+        <source>midi.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="OK1">
+      <value>6N138</value>
+      <footprint>Housings_DIP:DIP-8_W7.62mm</footprint>
+      <libsource lib="optocoupler-2" part="6N138"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CF73B</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>D</value>
+      <footprint>Diodes_SMD:SOD-123</footprint>
+      <libsource lib="device" part="D"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CF807</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>220</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CF868</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CF8EF</tstamp>
+    </comp>
+    <comp ref="P4">
+      <value>UART</value>
+      <footprint>Connectors_JST_SH:Connectors_JST_BM04B-SRSS-TB</footprint>
+      <libsource lib="conn" part="CONN_01X04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CFC08</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>220</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CFA6D</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>DIN_5</value>
+      <footprint>Connect:SDS-50J</footprint>
+      <libsource lib="conn" part="DIN_5"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>570CF7D8</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>CONN_01X04</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x04</footprint>
+      <libsource lib="conn" part="CONN_01X04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>571052D2</tstamp>
+    </comp>
+    <comp ref="P3">
+      <value>CONN_01X04</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x04</footprint>
+      <libsource lib="conn" part="CONN_01X04"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57105324</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="optocoupler-2" part="6N138">
+      <fields>
+        <field name="Reference">OK</field>
+        <field name="Value">6N138</field>
+        <field name="Footprint">optocoupler-2-DIL08</field>
+      </fields>
+      <pins>
+        <pin num="2" name="A" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="VO" type="passive"/>
+        <pin num="7" name="VB" type="passive"/>
+        <pin num="8" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X04">
+      <description>Connector 01x04</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X04</fp>
+        <fp>Pin_Header_Angled_1X04</fp>
+        <fp>Socket_Strip_Straight_1X04</fp>
+        <fp>Socket_Strip_Angled_1X04</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X04</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="D">
+      <description>Diode</description>
+      <footprints>
+        <fp>Diode_*</fp>
+        <fp>D-Pak_TO252AA</fp>
+        <fp>*SingleDiode</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="DIN_5">
+      <description>5 pins connector, 41524</description>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">DIN_5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="optocoupler-2">
+      <uri>/Users/jordi/Documents/GitHub/ECE395-Clarinet/electronics/lib/optocoupler-2.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>/Library/Application Support/kicad/library/conn.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>/Library/Application Support/kicad/library/device.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/M2">
+      <node ref="P1" pin="2"/>
+      <node ref="P2" pin="2"/>
+    </net>
+    <net code="2" name="GND">
+      <node ref="P2" pin="4"/>
+      <node ref="R3" pin="1"/>
+      <node ref="OK1" pin="5"/>
+      <node ref="P4" pin="4"/>
+    </net>
+    <net code="3" name="+3V3">
+      <node ref="P4" pin="3"/>
+      <node ref="R2" pin="1"/>
+      <node ref="OK1" pin="8"/>
+      <node ref="P3" pin="4"/>
+    </net>
+    <net code="4" name="Net-(P4-Pad2)">
+      <node ref="P4" pin="2"/>
+    </net>
+    <net code="5" name="/MIDI_IN">
+      <node ref="P4" pin="1"/>
+      <node ref="R2" pin="2"/>
+      <node ref="P3" pin="1"/>
+      <node ref="OK1" pin="6"/>
+    </net>
+    <net code="6" name="/M5">
+      <node ref="OK1" pin="3"/>
+      <node ref="D1" pin="2"/>
+      <node ref="P1" pin="5"/>
+      <node ref="P3" pin="3"/>
+    </net>
+    <net code="7" name="/M4">
+      <node ref="P1" pin="4"/>
+      <node ref="P3" pin="2"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="8" name="/M3">
+      <node ref="P1" pin="3"/>
+      <node ref="P2" pin="3"/>
+    </net>
+    <net code="9" name="/M1">
+      <node ref="P2" pin="1"/>
+      <node ref="P1" pin="1"/>
+    </net>
+    <net code="10" name="Net-(OK1-Pad7)">
+      <node ref="R3" pin="2"/>
+      <node ref="OK1" pin="7"/>
+    </net>
+    <net code="11" name="Net-(D1-Pad1)">
+      <node ref="R1" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="OK1" pin="2"/>
+    </net>
+  </nets>
+</export>

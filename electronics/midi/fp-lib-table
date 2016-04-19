@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name open-project)(type Legacy)(uri /Users/jordi/Documents/GitHub/ECE395-Clarinet/electronics/lib/open-project/open-project.mod)(options "")(descr ""))
+)
