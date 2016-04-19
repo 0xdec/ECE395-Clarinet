@@ -533,7 +533,7 @@
   )
 
   (module Connectors_JST_SH:Connectors_JST_BM04B-SRSS-TB (layer F.Cu) (tedit 5715C080) (tstamp 5715BCB0)
-    (at 163.83 114.3 90)
+    (at 151.13 128.27 90)
     (descr "JST SH series connector, BM04B-SRSS-TB")
     (tags "connector jst sh")
     (path /5708C32D)
