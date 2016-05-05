@@ -293,7 +293,6 @@ var create = function(val) {
   note.midi = instruments.clarinet.lowestNote + num;
   //note.concert = getPitch(note.midi);
   note.pitch = getPitch(note.midi + 2);
-  note.pitch = 
   note.number = val || 0;
   note.binary = '';
   note.hex = '';
