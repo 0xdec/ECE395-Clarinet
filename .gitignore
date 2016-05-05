@@ -1,4 +1,5 @@
 reference
+.imdone
 
 firmware/*.axf
 firmware/*.crf
