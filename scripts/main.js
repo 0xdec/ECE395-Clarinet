@@ -281,14 +281,12 @@ var create = function(val) {
     var octave = (midi - pitch) / 12 - 1;
 
     if (pitches[pitch] == '#') {
-      pitch = `${pitches[pitch - 1]}♯`;
+      return `${pitches[pitch - 1]}♯${octave}`;
     } else if (pitches[pitch] == 'b') {
-      pitch = `${pitches[pitch + 1]}♭`;
+      return `${pitches[pitch + 1]}♭${octave}`;
     } else {
-      pitch = pitches[pitch];
+      return `${pitches[pitch]}${octave}`;
     }
-
-    return `${pitch}${octave}`;
   }
 
   // HACK: change hardcoded intstrument to general function
