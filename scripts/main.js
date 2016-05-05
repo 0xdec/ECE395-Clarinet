@@ -282,9 +282,9 @@ var create = function(val) {
   var pitch = note.midi % 12;
   var octave = (note.midi - pitch) / 12 - 1;
   if (pitches[pitch] == '#') {
-    pitch = `${pitches[pitch - 1]}&#9839;`;
+    pitch = `${pitches[pitch - 1]}♯`;
   } else if (pitches[pitch] == 'b') {
-    pitch = `${pitches[pitch + 1]}&#9837;`;
+    pitch = `${pitches[pitch + 1]}♭`;
   } else {
     pitch = pitches[pitch];
   }
