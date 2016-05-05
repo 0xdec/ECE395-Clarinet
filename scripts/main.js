@@ -275,21 +275,27 @@ var create = function(val) {
   if (val === undefined) {
     val = prevNote.number;
   }
-  
-  // HACK: change hardcoded intstrument to general function
-  note.midi = instruments.clarinet.lowestNote + num;
 
-  var pitch = note.midi % 12;
-  var octave = (note.midi - pitch) / 12 - 1;
-  if (pitches[pitch] == '#') {
-    pitch = `${pitches[pitch - 1]}♯`;
-  } else if (pitches[pitch] == 'b') {
-    pitch = `${pitches[pitch + 1]}♭`;
-  } else {
-    pitch = pitches[pitch];
+  var getPitch = function(midi) {
+    var pitch = midi % 12;
+    var octave = (midi - pitch) / 12 - 1;
+
+    if (pitches[pitch] == '#') {
+      pitch = `${pitches[pitch - 1]}♯`;
+    } else if (pitches[pitch] == 'b') {
+      pitch = `${pitches[pitch + 1]}♭`;
+    } else {
+      pitch = pitches[pitch];
+    }
+
+    return `${pitch}${octave}`;
   }
 
-  note.pitch = `${pitch}${octave}`;
+  // HACK: change hardcoded intstrument to general function
+  note.midi = instruments.clarinet.lowestNote + num;
+  //note.concert = getPitch(note.midi);
+  note.pitch = getPitch(note.midi + 2);
+  note.pitch = 
   note.number = val || 0;
   note.binary = '';
   note.hex = '';
