@@ -2,9 +2,11 @@ var notes = [];
 var current = 0;
 
 const size = 30;
+const pitches = ['C', '#', 'D', 'b', 'E', 'F', '#', 'G', '#', 'A', 'b', 'B'];
 const instruments = {
   clarinet: {
     // From low F to high F
+    lowestNote: 51,
     fingerings: [
       0x10fe, 0x40fe, 0x00fe, 0x80fe, 0x007e, 0x003e, 0x005e, 0x001e, 0x081e, 0x000e, 0x040e, 0x0006,
       0x0002, 0x0004, 0x0000, 0x0200, 0x0100, 0x0101, 0x20ff, 0x10ff, 0x40ff, 0x00ff, 0x80ff, 0x007f,
@@ -273,7 +275,21 @@ var create = function(val) {
   if (val === undefined) {
     val = prevNote.number;
   }
+  
+  // HACK: change hardcoded intstrument to general function
+  note.midi = instruments.clarinet.lowestNote + num;
 
+  var pitch = note.midi % 12;
+  var octave = (note.midi - pitch) / 12 - 1;
+  if (pitches[pitch] == '#') {
+    pitch = `${pitches[pitch - 1]}&#9839;`;
+  } else if (pitches[pitch] == 'b') {
+    pitch = `${pitches[pitch + 1]}&#9837;`;
+  } else {
+    pitch = pitches[pitch];
+  }
+
+  note.pitch = `${pitch}${octave}`;
   note.number = val || 0;
   note.binary = '';
   note.hex = '';
