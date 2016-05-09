@@ -1,6 +1,6 @@
 #include "note.h"
 
-// Starts at F below the staff
+// Clarinet range goes from F3 to F6 (key of Bb)
 static const uint16_t note_map[NUM_NOTES] = {
   0x10fe,
   0x40fe,
@@ -44,11 +44,13 @@ static const uint16_t note_map[NUM_NOTES] = {
 static int8_t current_note = -1;
 static int8_t lowest_note = LOWEST_NOTE;
 
+// Initialize the PWM and SPI interfaces
 void note_init() {
   servo_init(63);
   SPI_init();
 }
 
+// MIDI note on handler
 void note_on(int8_t note, int8_t velocity) {
   int8_t note_offset = note - lowest_note;
 
@@ -56,12 +58,14 @@ void note_on(int8_t note, int8_t velocity) {
     // A velocity of 0 is equivalent to a note_off command
     note_off(note);
   } else if ((note_offset >= 0) && (note_offset < NUM_NOTES)) {
+    // Change to a new note
     current_note = note;
     note_volume(note, velocity);
     SPI_send(note_map[note_offset]);
   }
 }
 
+// MIDI note on handler
 void note_off(int8_t note) {
   if (COMPARE(note, current_note)) {
     note_volume(note, 0);
@@ -72,16 +76,19 @@ void note_off(int8_t note) {
 
 // TODO: map from note velocity to servo position/air pressure. A velocity of 64
 // is the default MIDI velocity, so should be handled as such.
+// Note volume handler
 void note_volume(int8_t note, int8_t volume) {
   if (COMPARE(note, current_note)) {
     servo_pos(volume - 64);
   }
 }
 
+// Changes the transposition interval for all future notes
 void note_transpose(int8_t interval) {
   lowest_note = LOWEST_NOTE + interval;
 }
 
+// Get the current note
 int8_t note_get() {
   return current_note;
 }

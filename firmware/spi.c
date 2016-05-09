@@ -1,5 +1,6 @@
 #include "spi.h"
 
+// Initialize SPI interface
 void SPI_init() {
   // Select pin function SSEL0 (sec 7.4.6)
   LPC_IOCON->PIO0_2 = (LPC_IOCON->PIO0_2 & ~BIT1) | BIT0;
@@ -25,6 +26,7 @@ void SPI_init() {
   LPC_SSP0->CR1 |= BIT1;
 }
 
+// Send two bytes (16 bits) via SPI
 void SPI_send(uint16_t data) {
   // Transmit FIFO not full (sec 14.6.4)
   if (LPC_SSP0->SR & BIT1) {

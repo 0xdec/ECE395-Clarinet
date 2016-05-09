@@ -6,6 +6,7 @@ static uint8_t message[3];
 static uint8_t message_length = 0;
 static uint8_t message_index;
 
+// Initialize MIDI interface and listen on the given channel
 void MIDI_init(uint8_t chan) {
   // Define the channel the clarinet will listen on. Defaults to 1. Range is
   // from 1 to 16, excluding channel 10 (reserved for percussion).
@@ -19,6 +20,7 @@ void MIDI_init(uint8_t chan) {
   note_init();
 }
 
+// Receive and parse MIDI messages
 void MIDI_receive() {
   // Check if data has been received
   if (UART_available()) {
@@ -59,9 +61,11 @@ void MIDI_receive() {
       }
     }
 
+    // Only store the byte if more bytes are still expected
     if (message_index < message_length) {
       message[message_index++] = byte;
 
+      // Call the message handler if all bytes have been received
       if (message_index == message_length) {
         message_length = 0;
         MIDI_voice();
@@ -70,6 +74,7 @@ void MIDI_receive() {
   }
 }
 
+// MIDI voice message handler
 static void MIDI_voice() {
   switch (message[0]) {
     case 0x80: // Note Off
@@ -97,8 +102,10 @@ static void MIDI_voice() {
   }
 }
 
+// MIDI system common message handler
 static void MIDI_sys_common(uint8_t status) {}
 
+// MIDI system realtime message handler
 static void MIDI_sys_realtime(uint8_t status) {
   switch (status) {
     case 0xF8: // Clock

@@ -7,6 +7,7 @@
 #define LOWEST_NOTE 51 // Corresponds to a Concert Eb
 #define NUM_NOTES   37 // Three octave range
 
+// Check that a and b are non-negative and equal
 #define COMPARE(a, b) (((b) >= 0) && ((a) == (b)))
 
 void note_init(void);

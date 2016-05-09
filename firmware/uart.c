@@ -1,6 +1,6 @@
 #include "uart.h"
 
-// Set up UART
+// Initialize UART interface
 void UART_init(uint32_t baudrate) {
   // Select pin function RXD (sec 7.4.40)
   LPC_IOCON->PIO1_6 = (LPC_IOCON->PIO1_6 & ~BIT1) | BIT0;
@@ -20,11 +20,13 @@ void UART_init(uint32_t baudrate) {
   LPC_UART->TER |= BIT7;
 }
 
+// Send one byte (8 bits) via UART
 void UART_send(uint8_t data) {
   // Transmit data (sec 13.5.2)
   LPC_UART->THR |= data;
 }
 
+// Check if bytes are available in the UART receive buffer
 uint8_t UART_available() {
   // Overrun Error (sec 13.5.9)
   if (LPC_UART->LSR & BIT1) {
@@ -35,6 +37,7 @@ uint8_t UART_available() {
   }
 }
 
+// Read the next byte in the UART receive buffer
 uint8_t UART_receive() {
   // Receiver Buffer Register (sec 13.5.1)
   return LPC_UART->RBR & 0xFF;
