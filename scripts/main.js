@@ -50,6 +50,13 @@ const instruments = {
       },
       {
         type: 'ellipse',
+        size: [1, 2],
+        pos: [1.25, -1.75],
+        fill: '#ddd',
+        stroke: '#bbb'
+      },
+      {
+        type: 'ellipse',
         size: [1.5, 1],
         pos: [-1.5, -7.75],
         fill: '#ddd',
@@ -66,13 +73,6 @@ const instruments = {
         type: 'ellipse',
         size: [2, 1],
         pos: [-0.5, -12.25],
-        fill: '#ddd',
-        stroke: '#bbb'
-      },
-      {
-        type: 'ellipse',
-        size: [2, 1],
-        pos: [-2.5, -12],
         fill: '#ddd',
         stroke: '#bbb'
       },
@@ -178,8 +178,8 @@ const instruments = {
       {
         name: 'key_13',
         type: 'ellipse',
-        size: [1, 2],
-        pos: [1.25, -1.75]
+        size: [2, 1],
+        pos: [-2.5, -12]
       },
       {
         name: 'key_14',
