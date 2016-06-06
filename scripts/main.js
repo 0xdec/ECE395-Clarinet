@@ -43,6 +43,13 @@ const instruments = {
       },
       {
         type: 'ellipse',
+        size: [1, 1.5],
+        pos: [1.5, 4],
+        fill: '#ddd',
+        stroke: '#bbb'
+      },
+      {
+        type: 'ellipse',
         size: [1.5, 1],
         pos: [-1.5, -7.75],
         fill: '#ddd',
@@ -87,13 +94,6 @@ const instruments = {
         type: 'circle',
         size: [0.75],
         pos: [-2, -0.5],
-        fill: '#ddd',
-        stroke: '#bbb'
-      },
-      {
-        type: 'circle',
-        size: [0.75],
-        pos: [-2, -1.5],
         fill: '#ddd',
         stroke: '#bbb'
       },
@@ -159,9 +159,9 @@ const instruments = {
       },
       {
         name: 'key_10',
-        type: 'ellipse',
-        size: [1, 1.5],
-        pos: [1.5, 4]
+        type: 'circle',
+        size: [0.75],
+        pos: [-2, -1.5]
       },
       {
         name: 'key_11',
