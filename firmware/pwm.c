@@ -1,9 +1,11 @@
 #include "pwm.h"
+#include "system.h"
 
 // Initialize PWM interface with 16 bit timer
 void PWM_init(uint16_t period) {
   // Select pin function CT16B0_MAT0 (sec 7.4.23)
-  LPC_IOCON->PIO0_8 = (LPC_IOCON->PIO0_8 & ~BIT0) | BIT1;
+  LPC_IOCON->PIO0_8 &= ~BIT0;
+  LPC_IOCON->PIO0_8 |=  BIT1;
   // Select standard GPIO output mode (sec 7.4.23)
   LPC_IOCON->PIO0_8 &= ~BIT10;
 

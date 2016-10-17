@@ -1,11 +1,14 @@
 #include "uart.h"
+#include "system.h"
 
 // Initialize UART interface
 void UART_init(uint32_t baudrate) {
   // Select pin function RXD (sec 7.4.40)
-  LPC_IOCON->PIO1_6 = (LPC_IOCON->PIO1_6 & ~BIT1) | BIT0;
+  LPC_IOCON->PIO1_6 &= ~BIT1;
+  LPC_IOCON->PIO1_6 |=  BIT0;
   // Select pin function TXD (sec 7.4.41)
-  LPC_IOCON->PIO1_7 = (LPC_IOCON->PIO1_7 & ~BIT1) | BIT0;
+  LPC_IOCON->PIO1_7 &= ~BIT1;
+  LPC_IOCON->PIO1_7 |=  BIT0;
 
   // Enable clock for UART (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT12;
@@ -20,8 +23,8 @@ void UART_init(uint32_t baudrate) {
   LPC_UART->TER |= BIT7;
 }
 
-// Send one byte (8 bits) via UART
-void UART_send(uint8_t data) {
+// Transmit one byte (8 bits) via UART
+void UART_transmit(uint8_t data) {
   // Transmit data (sec 13.5.2)
   LPC_UART->THR |= data;
 }

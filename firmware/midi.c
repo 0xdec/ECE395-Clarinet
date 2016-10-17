@@ -1,4 +1,6 @@
 #include "midi.h"
+#include "uart.h"
+#include "note.h"
 
 static uint8_t channel = 0;
 
@@ -25,7 +27,7 @@ void MIDI_receive() {
   // Check if data has been received
   if (UART_available()) {
     uint8_t byte = UART_receive();
-    UART_send(byte); // HACK: debugging
+    UART_transmit(byte); // HACK: debugging
 
     // Determine message type from status byte
     if (byte >= 0xF8) {

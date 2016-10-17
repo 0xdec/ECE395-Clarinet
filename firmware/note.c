@@ -1,4 +1,6 @@
 #include "note.h"
+#include "servo.h"
+#include "spi.h"
 
 // Clarinet range goes from F3 to F6 (key of Bb)
 static const uint16_t note_map[NUM_NOTES] = {
@@ -61,7 +63,7 @@ void note_on(int8_t note, int8_t velocity) {
     // Change to a new note
     current_note = note;
     note_volume(note, velocity);
-    SPI_send(note_map[note_offset]);
+    SPI_transmit(note_map[note_offset]);
   }
 }
 
@@ -69,7 +71,7 @@ void note_on(int8_t note, int8_t velocity) {
 void note_off(int8_t note) {
   if (COMPARE(note, current_note)) {
     note_volume(note, 0);
-    SPI_send(0);
+    SPI_transmit(0);
     current_note = -1;
   }
 }

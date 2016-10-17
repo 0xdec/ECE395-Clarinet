@@ -1,7 +1,7 @@
 #ifndef _SERVO_H_
 #define _SERVO_H_
 
-#include "pwm.h"
+#include "header.h"
 
 // Assumes that 1.5ms is the center-point and 2ms corresponds to 90deg
 #define PERIOD  20000
@@ -9,7 +9,7 @@
 #define RANGE   500
 #define ANGLE   90
 
-void servo_init(int8_t);
-void servo_pos(int8_t);
+void servo_init(int8_t max);
+void servo_pos(int8_t deg);
 
 #endif
