@@ -30,7 +30,7 @@ void UART_transmit(uint8_t data) {
 }
 
 // Check if bytes are available in the UART receive buffer
-uint8_t UART_available() {
+uint8_t UART_available(void) {
   // Overrun Error (sec 13.5.9)
   if (LPC_UART->LSR & BIT1) {
     return 16;
@@ -41,7 +41,7 @@ uint8_t UART_available() {
 }
 
 // Read the next byte in the UART receive buffer
-uint8_t UART_receive() {
+uint8_t UART_receive(void) {
   // Receiver Buffer Register (sec 13.5.1)
   return LPC_UART->RBR & 0xFF;
 }

@@ -1,7 +1,7 @@
 #include "system.h"
 
 // Configure and initialize system (clocks, etc)
-uint32_t system_init() {
+uint32_t system_init(void) {
   // Enable clock for IO configuration block (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT16;
 

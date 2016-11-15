@@ -1,7 +1,7 @@
 #include "spi.h"
 
 // Initialize SPI interface
-void SPI_init() {
+void SPI_init(void) {
   // Select pin function SSEL0 (sec 7.4.6)
   LPC_IOCON->PIO0_2 &= ~BIT1;
   LPC_IOCON->PIO0_2 |=  BIT0;

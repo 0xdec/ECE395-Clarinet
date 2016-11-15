@@ -28,18 +28,18 @@ void PWM_init(uint16_t period) {
   LPC_TMR16B0->PWMC = BIT0;
 }
 
-// Pause PWM by disabling the timer counter
-void PWM_disable() {
-  // Disable timer counter (sec 18.7.2)
-  LPC_TMR16B0->TCR &= ~BIT0;
-}
-
 // Resume PWM by enabling and resetting the timer counter
-void PWM_enable() {
+void PWM_enable(void) {
   // Enable and reset timer counter (sec 18.7.2)
   LPC_TMR16B0->TCR |= (BIT1 + BIT0);
   // Clear reset bit (sec 18.7.2)
   LPC_TMR16B0->TCR &= ~BIT1;
+}
+
+// Pause PWM by disabling the timer counter
+void PWM_disable(void) {
+  // Disable timer counter (sec 18.7.2)
+  LPC_TMR16B0->TCR &= ~BIT0;
 }
 
 // Set the PWM pulse width

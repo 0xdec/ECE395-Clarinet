@@ -47,7 +47,7 @@ static int8_t current_note = -1;
 static int8_t lowest_note = LOWEST_NOTE;
 
 // Initialize the PWM and SPI interfaces
-void note_init() {
+void note_init(void) {
   servo_init(63);
   SPI_init();
 }
@@ -91,6 +91,6 @@ void note_transpose(int8_t interval) {
 }
 
 // Get the current note
-int8_t note_get() {
+int8_t note_get(void) {
   return current_note;
 }

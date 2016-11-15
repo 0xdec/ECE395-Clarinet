@@ -23,7 +23,7 @@ void MIDI_init(uint8_t chan) {
 }
 
 // Receive and parse MIDI messages
-void MIDI_receive() {
+void MIDI_receive(void) {
   // Check if data has been received
   if (UART_available()) {
     uint8_t byte = UART_receive();
@@ -77,7 +77,7 @@ void MIDI_receive() {
 }
 
 // MIDI voice message handler
-static void MIDI_voice() {
+static void MIDI_voice(void) {
   switch (message[0]) {
     case 0x80: // Note Off
       note_off(message[1]);
