@@ -2,7 +2,7 @@
 
 uint8_t mode      = 0;
 uint8_t available = 0;
-uint8_t* buffer   = NULL;
+uint8_t buffer[256];
 
 // Initialize I2C interface
 void I2C_init(void) {
@@ -112,13 +112,7 @@ uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
 uint8_t I2C_request(uint8_t address, uint8_t length) {
   // Master receive mode
   mode = 1;
-
-  if (buffer) {
-    free(buffer);
-  }
-
   available = 0;
-  buffer = malloc(length);
 
   I2C_start();
 
