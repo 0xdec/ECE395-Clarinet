@@ -69,7 +69,7 @@ uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
 
       if (i < length) {
         // Transmit data byte
-        I2C_data(data[i++]);
+        I2C_write_data(data[i++]);
       } else {
         I2C_stop();
         return 0x00;
@@ -160,7 +160,7 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
        *  - Clear AA
        */
 
-      buffer[available++] = I2C_data();
+      buffer[available++] = I2C_read_data();
 
       if (available < length) {
         I2C_ack();
@@ -174,7 +174,7 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
        *  - Transmit STOP condition
        */
 
-      buffer[available++] = I2C_data();
+      buffer[available++] = I2C_read_data();
       I2C_stop();
       return 0x00;
     } else if (status == 0x00) {
@@ -244,16 +244,16 @@ static void I2C_start(void) {
 
 // Load SLA+R/W
 static void I2C_address(uint8_t address) {
-  I2C_data((address << 1) | (mode % 2));
+  I2C_write_data((address << 1) | (mode % 2));
 }
 
 // Read data byte
-static uint8_t I2C_data(void) {
+static uint8_t I2C_read_data(void) {
   return LPC_I2C->DAT;
 }
 
 // Load data byte
-static void I2C_data(uint8_t data) {
+static void I2C_write_data(uint8_t data) {
   // Send data byte (sec 15.7.3)
   LPC_I2C->DAT = data;
   // Set AA bit (sec 15.7.1)

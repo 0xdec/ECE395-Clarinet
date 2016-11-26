@@ -15,8 +15,8 @@ static void I2C_ack(void);
 static void I2C_nack(void);
 static void I2C_start(void);
 static void I2C_address(uint8_t address);
-static uint8_t I2C_data(void);
-static void I2C_data(uint8_t data);
+static uint8_t I2C_read_data(void);
+static void I2C_write_data(uint8_t data);
 static void I2C_stop(void);
 
 #endif
