@@ -1,8 +1,8 @@
 #include "i2c.h"
 
-uint8_t mode      = 0;
-uint8_t available = 0;
-uint8_t buffer[256];
+static uint8_t mode      = 0;
+static uint8_t available = 0;
+static uint8_t buffer[256];
 
 // Initialize I2C interface
 void I2C_init(void) {
