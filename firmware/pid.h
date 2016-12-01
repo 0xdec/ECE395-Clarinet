@@ -10,8 +10,9 @@
 #define PID_ON        true
 #define PID_AUTOMATIC true
 
-void PID_init(double* input, double* output, double* target,
-              double kp, double ki, double kd, bool direction);
+double PID_input, PID_output, PID_target;
+
+void PID_init(double kp, double ki, double kd, bool direction);
 bool PID_compute(void);
 void PID_params(double kp, double ki, double kd);
 void PID_limits(double min, double max);

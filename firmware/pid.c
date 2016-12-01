@@ -9,17 +9,11 @@
 
 #include "pid.h"
 
-static double *_input, *_output, *_target;
-static double _kp, _ki, _kd, _min, _max, _iTerm, _lastInput;
-static unsigned long _dt, _lastTime;
+static double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
+static unsigned long _dt, lastTime;
 static bool _direction, _mode;
 
-void PID_init(double* input, double* output, double* target,
-              double kp, double ki, double kd, bool direction) {
-  _input  = input;
-  _output = output;
-  _target = target;
-
+void PID_init(double kp, double ki, double kd, bool direction) {
   _dt   = 100;
   _min  = 0;
   _max  = 255;
@@ -28,23 +22,23 @@ void PID_init(double* input, double* output, double* target,
   PID_direction(direction);
   PID_params(kp, ki, kd);
 
-  _lastTime = millis() - _dt;
+  lastTime = millis() - _dt;
 }
 
 bool PID_compute(void) {
   unsigned long now = millis();
 
-  if ((_mode == PID_ON) && (now - _lastTime >= _dt)) {
+  if ((_mode == PID_ON) && (now - lastTime >= _dt)) {
     // Compute the current error
-    double error = *_target - *_input;
-    _iTerm = PID_limit(_iTerm + _ki * error);
+    double error = PID_target - PID_input;
+    iTerm = PID_limit(iTerm + _ki * error);
 
     // Compute PID Output
-    *_output = PID_limit(_kp * error + _iTerm - _kd * (*_input - _lastInput));
+    PID_output = PID_limit(_kp * error + iTerm - _kd * (PID_input - lastInput));
 
     // Remember some variables for next time
-    _lastInput = *_input;
-    _lastTime  = now;
+    lastInput = PID_input;
+    lastTime  = now;
 
     return true;
   }
@@ -78,8 +72,8 @@ void PID_limits(double min, double max) {
   _max = max;
 
   if (_mode == PID_ON) {
-    *_output = PID_limit(*_output);
-    _iTerm   = PID_limit(_iTerm);
+    PID_output = PID_limit(PID_output);
+    iTerm      = PID_limit(iTerm);
   }
 }
 
@@ -102,8 +96,8 @@ void PID_direction(bool direction) {
 
 void PID_mode(bool mode) {
   if ((mode == PID_ON) && (_mode == PID_OFF)) {
-    _lastInput = *_input;
-    _iTerm     = PID_limit(*_output);
+    lastInput = PID_input;
+    iTerm     = PID_limit(PID_output);
   }
 
   _mode = mode;
