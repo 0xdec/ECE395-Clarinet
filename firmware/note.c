@@ -49,7 +49,7 @@ static int8_t lowest_note = LOWEST_NOTE;
 // Initialize the PWM and SPI interfaces
 void note_init(void) {
   servo_init(63);
-  SPI_init();
+  SPI_init(16);
 }
 
 // MIDI note on handler

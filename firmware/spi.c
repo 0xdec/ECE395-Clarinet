@@ -1,7 +1,15 @@
 #include "spi.h"
 
 // Initialize SPI interface
-void SPI_init(void) {
+void SPI_init(uint8_t size) {
+  if (size < 4) {
+    size = 0x3;
+  } else if (size > 16) {
+    size = 0xF;
+  } else {
+    size--;
+  }
+
   // Select pin function SSEL0 (sec 7.4.6)
   LPC_IOCON->PIO0_2 &= ~BIT1;
   LPC_IOCON->PIO0_2 |=  BIT0;
@@ -23,17 +31,17 @@ void SPI_init(void) {
 
   // Set SPI clock prescale value (sec 14.6.5)
   LPC_SSP0->CPSR |= 0x02;
-  // 16-bit transfer (sec 14.6.1)
-  LPC_SSP0->CR0 |= 0xF;
+  // Data size select (sec 14.6.1)
+  LPC_SSP0->CR0 |= size;
   // Enable SPI (sec 14.6.2)
   LPC_SSP0->CR1 |= BIT1;
 }
 
-// Transmit two bytes (16 bits) via SPI
+// Transmit one frame via SPI
 void SPI_transmit(uint16_t data) {
-  // Transmit FIFO not full (sec 14.6.4)
-  if (LPC_SSP0->SR & BIT1) {
-    // Transmit data (sec 14.6.3)
-    LPC_SSP0->DR |= data;
-  }
+  // Wait until transmit FIFO not full (sec 14.6.4)
+  while (!(LPC_SSP0->SR & BIT1));
+
+  // Transmit data (sec 14.6.3)
+  LPC_SSP0->DR |= data;
 }
