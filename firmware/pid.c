@@ -8,6 +8,7 @@
  */
 
 #include "pid.h"
+#include "time.h"
 
 static double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
 static unsigned long _dt, lastTime;
@@ -22,11 +23,11 @@ void PID_init(double kp, double ki, double kd, bool direction) {
   PID_direction(direction);
   PID_params(kp, ki, kd);
 
-  lastTime = millis() - _dt;
+  lastTime = time_millis() - _dt;
 }
 
 bool PID_compute(void) {
-  unsigned long now = millis();
+  unsigned long now = time_millis();
 
   if ((_mode == PID_ON) && (now - lastTime >= _dt)) {
     // Compute the current error
