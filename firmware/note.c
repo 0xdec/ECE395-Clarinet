@@ -1,5 +1,4 @@
 #include "note.h"
-#include "servo.h"
 #include "spi.h"
 
 // Clarinet range goes from F3 to F6 (key of Bb)
@@ -48,7 +47,7 @@ static int8_t lowest_note = LOWEST_NOTE;
 
 // Initialize the PWM and SPI interfaces
 void note_init(void) {
-  servo_init(63);
+  // Initialize the SPI interface
   SPI_init(16);
 }
 
@@ -81,7 +80,6 @@ void note_off(int8_t note) {
 // Note volume handler
 void note_volume(int8_t note, int8_t volume) {
   if (COMPARE(note, current_note)) {
-    servo_pos(volume - 64);
   }
 }
 
