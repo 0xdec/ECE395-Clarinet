@@ -31,14 +31,14 @@ bool PID_compute(void) {
 
   if ((_mode == PID_ON) && (now - lastTime >= _dt)) {
     // Compute the current error
-    double error = PID_target - PID_input;
+    double error = PID_setpoint - PID_process;
     iTerm = PID_limit(iTerm + _ki * error);
 
     // Compute PID Output
-    PID_output = PID_limit(_kp * error + iTerm - _kd * (PID_input - lastInput));
+    PID_manipulated = PID_limit(_kp * error + iTerm - _kd * (PID_process - lastInput));
 
     // Remember some variables for next time
-    lastInput = PID_input;
+    lastInput = PID_process;
     lastTime  = now;
 
     return true;
@@ -73,7 +73,7 @@ void PID_limits(double min, double max) {
   _max = max;
 
   if (_mode == PID_ON) {
-    PID_output = PID_limit(PID_output);
+    PID_manipulated = PID_limit(PID_manipulated);
     iTerm      = PID_limit(iTerm);
   }
 }
@@ -97,8 +97,8 @@ void PID_direction(bool direction) {
 
 void PID_mode(bool mode) {
   if ((mode == PID_ON) && (_mode == PID_OFF)) {
-    lastInput = PID_input;
-    iTerm     = PID_limit(PID_output);
+    lastInput = PID_process;
+    iTerm     = PID_limit(PID_manipulated);
   }
 
   _mode = mode;
