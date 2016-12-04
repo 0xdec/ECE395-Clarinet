@@ -1,5 +1,6 @@
 #include "note.h"
 #include "spi.h"
+#include "pressure.h"
 
 // Clarinet range goes from F3 to F6 (key of Bb)
 static const uint16_t note_map[NUM_NOTES] = {
@@ -42,11 +43,53 @@ static const uint16_t note_map[NUM_NOTES] = {
   0x881b
 };
 
+static const float note_pressure[NUM_NOTES] = {
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0,
+  110.0
+};
+
 static int8_t current_note = -1;
 static int8_t lowest_note = LOWEST_NOTE;
 
 // Initialize the PWM and SPI interfaces
 void note_init(void) {
+  // Initialize the pressure controller
+  pressure_init();
   // Initialize the SPI interface
   SPI_init(16);
 }
@@ -69,17 +112,17 @@ void note_on(int8_t note, int8_t velocity) {
 // MIDI note on handler
 void note_off(int8_t note) {
   if (COMPARE(note, current_note)) {
-    note_volume(note, 0);
+    pressure_set(PRESSURE_SEA_LEVEL);
     SPI_transmit(0);
     current_note = -1;
   }
 }
 
-// TODO: map from note velocity to servo position/air pressure. A velocity of 64
-// is the default MIDI velocity, so should be handled as such.
 // Note volume handler
+// A velocity of 64 is the default MIDI velocity and should be handled as such
 void note_volume(int8_t note, int8_t volume) {
   if (COMPARE(note, current_note)) {
+    pressure_set(note_pressure[note - lowest_note]);
   }
 }
 
