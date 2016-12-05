@@ -2,11 +2,14 @@
 #include "uart.h"
 #include "note.h"
 
-static uint8_t channel = 0;
+static void MIDI_voice(void);
+static void MIDI_sys_common(uint8_t status);
+static void MIDI_sys_realtime(uint8_t status);
 
-static uint8_t message[3];
-static uint8_t message_length = 0;
-static uint8_t message_index;
+uint8_t channel = 0;
+uint8_t message[3];
+uint8_t message_length = 0;
+uint8_t message_index;
 
 // Initialize MIDI interface and listen on the given channel
 void MIDI_init(uint8_t chan) {

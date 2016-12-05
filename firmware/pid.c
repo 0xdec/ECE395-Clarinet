@@ -10,9 +10,11 @@
 #include "pid.h"
 #include "time.h"
 
-static double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
-static unsigned long _dt, lastTime;
-static bool _direction, _mode;
+static double PID_limit(double var);
+
+double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
+unsigned long _dt, lastTime;
+bool _direction, _mode;
 
 void PID_init(double kp, double ki, double kd, bool direction) {
   _dt   = 100;

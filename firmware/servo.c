@@ -1,7 +1,7 @@
 #include "servo.h"
 #include "pwm.h"
 
-static int8_t max_angle;
+int8_t max_angle;
 
 // Initialize servo bounds and PWM interface
 void servo_init(int8_t max) {

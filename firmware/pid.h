@@ -20,6 +20,4 @@ void PID_period(unsigned long dt);
 void PID_direction(bool direction);
 void PID_mode(bool mode);
 
-static double PID_limit(double var);
-
 #endif

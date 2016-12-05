@@ -83,8 +83,8 @@ static const float note_pressure[NUM_NOTES] = {
   110.0
 };
 
-static int8_t current_note = -1;
-static int8_t lowest_note = LOWEST_NOTE;
+int8_t current_note = -1;
+int8_t lowest_note  = LOWEST_NOTE;
 
 // Initialize the PWM and SPI interfaces
 void note_init(void) {

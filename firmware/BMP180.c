@@ -1,9 +1,13 @@
 #include "BMP180.h"
-#include "i2c.h"
 
-static int16_t AC1, AC2, AC3, VB1, VB2, MB, MC, MD;
-static uint16_t AC4, AC5, AC6;
-static double c5, c6, mc, md, x0, x1, x2, y0, y1, y2, p0, p1, p2;
+static bool BMP180_int(uint8_t address, int16_t* value);
+static bool BMP180_uint(uint8_t address, uint16_t* value);
+static bool BMP180_read(uint8_t* values, uint8_t length);
+static bool BMP180_write(uint8_t* values, uint8_t length);
+
+int16_t AC1, AC2, AC3, VB1, VB2, MB, MC, MD;
+uint16_t AC4, AC5, AC6;
+double c5, c6, mc, md, x0, x1, x2, y0, y1, y2, p0, p1, p2;
 
 /*
  * Initialize library for subsequent pressure measurements.
@@ -16,17 +20,17 @@ bool BMP180_init(void) {
   // calculations when taking pressure measurements.
 
   // Retrieve calibration data from device:
-  if (BMP180_int(0xAA, AC1)  &&
-      BMP180_int(0xAC, AC2)  &&
-      BMP180_int(0xAE, AC3)  &&
-      BMP180_uint(0xB0, AC4) &&
-      BMP180_uint(0xB2, AC5) &&
-      BMP180_uint(0xB4, AC6) &&
-      BMP180_int(0xB6, VB1)  &&
-      BMP180_int(0xB8, VB2)  &&
-      BMP180_int(0xBA, MB)   &&
-      BMP180_int(0xBC, MC)   &&
-      BMP180_int(0xBE, MD)) {
+  if (BMP180_int(0xAA, &AC1)  &&
+      BMP180_int(0xAC, &AC2)  &&
+      BMP180_int(0xAE, &AC3)  &&
+      BMP180_uint(0xB0, &AC4) &&
+      BMP180_uint(0xB2, &AC5) &&
+      BMP180_uint(0xB4, &AC6) &&
+      BMP180_int(0xB6, &VB1)  &&
+      BMP180_int(0xB8, &VB2)  &&
+      BMP180_int(0xBA, &MB)   &&
+      BMP180_int(0xBC, &MC)   &&
+      BMP180_int(0xBE, &MD)) {
 
     // If you need to check your math using known numbers, you can uncomment
     // one of these examples. The correct results are commented in the below
@@ -87,7 +91,7 @@ uint8_t BMP180_start_temperature(void) {
  * T: external variable to hold result.
  * Returns 1 if successful, 0 if I2C error.
  */
-bool BMP180_temperature(double& T) {
+bool BMP180_temperature(double* T) {
   uint8_t data[2];
   data[0] = BMP180_REG_RESULT;
 
@@ -102,7 +106,7 @@ bool BMP180_temperature(double& T) {
     // tu = 0x69EC;
 
     double a = c5 * (tu - c6);
-    T = a + (mc / (a + md));
+    *T = a + (mc / (a + md));
 
     return true;
   }
@@ -164,7 +168,7 @@ uint8_t BMP180_start_pressure(uint8_t oversampling) {
  * Note that calculated pressure value is absolute mbars, to compensate for
  * altitude call BMP180_sealevel().
  */
-bool BMP180_pressure(double& P, double& T) {
+bool BMP180_pressure(double* P, double* T) {
   uint8_t data[3];
   data[0] = BMP180_REG_RESULT;
 
@@ -178,11 +182,11 @@ bool BMP180_pressure(double& P, double& T) {
     // Example from http://wmrx00.sourceforge.net/Arduino/BMP085-Calcs.pdf, pu = 0x982FC0;
     // pu = (0x98 * 256.0) + 0x2F + (0xC0 / 256.0);
 
-    double s = T - 25.0;
+    double s = *T - 25.0;
     double x = (x2 * pow(s, 2)) + (x1 * s) + x0;
     double y = (y2 * pow(s, 2)) + (y1 * s) + y0;
     double z = (pu - x) / y;
-    P = (p2 * pow(z, 2)) + (p1 * z) + p0;
+    *P = (p2 * pow(z, 2)) + (p1 * z) + p0;
 
     return true;
   }
@@ -214,18 +218,18 @@ double BMP180_altitude(double P, double P0) {
  * address: register to start reading (plus subsequent register)
  * value: external variable to store data (function modifies value)
  */
-static bool BMP180_int(uint8_t address, int16_t& value) {
+static bool BMP180_int(uint8_t address, int16_t* value) {
   uint8_t data[2];
   data[0] = address;
 
   if (BMP180_read(data, 2)) {
-    value = (int16_t)((data[0] << 8) | data[1]);
+    *value = (int16_t)((data[0] << 8) | data[1]);
     //if (*value & 0x8000) *value |= 0xFFFF0000; // sign extend if negative
 
     return true;
   }
 
-  value = 0;
+  *value = 0;
   return false;
 }
 
@@ -234,17 +238,17 @@ static bool BMP180_int(uint8_t address, int16_t& value) {
  * address: register to start reading (plus subsequent register)
  * value: external variable to store data (function modifies value)
  */
-static bool BMP180_uint(uint8_t address, uint16_t& value) {
+static bool BMP180_uint(uint8_t address, uint16_t* value) {
   uint8_t data[2];
   data[0] = address;
 
   if (BMP180_read(data,2)) {
-    value = (((uint16_t)data[0] << 8) | (uint16_t)data[1]);
+    *value = (((uint16_t)data[0] << 8) | (uint16_t)data[1]);
 
     return true;
   }
 
-  value = 0;
+  *value = 0;
   return false;
 }
 
@@ -257,8 +261,9 @@ static bool BMP180_read(uint8_t* values, uint8_t length) {
   if (I2C_transmit(BMP180_ADDR, 1, values) == 0x00) {
     I2C_request(BMP180_ADDR, length);
 
-    for (uint8_t i = 0; i < I2C_available(); i++) {
-      values[i] = I2C_read();
+    uint8_t i;
+    for (i = 0; i < I2C_available(); i++) {
+      values[i] = I2C_read(i);
     }
 
     return true;

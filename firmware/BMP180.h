@@ -2,6 +2,7 @@
 #define _BMP180_H_
 
 #include "header.h"
+#include "i2c.h"
 
 #define BMP180_ADDR 0x77 // 7-bit address
 
@@ -16,15 +17,10 @@
 
 bool BMP180_init(void);
 uint8_t BMP180_start_temperature(void);
-bool BMP180_temperature(double& T);
+bool BMP180_temperature(double* T);
 uint8_t BMP180_start_pressure(uint8_t oversampling);
-bool BMP180_pressure(double& P, double& T);
+bool BMP180_pressure(double* P, double* T);
 double BMP180_sealevel(double P, double A);
 double BMP180_altitude(double P, double P0);
-
-static bool BMP180_int(uint8_t address, int16_t& value);
-static bool BMP180_uint(uint8_t address, uint16_t& value);
-static bool BMP180_read(uint8_t* values, uint8_t length);
-static bool BMP180_write(uint8_t* values, uint8_t length);
 
 #endif

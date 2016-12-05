@@ -3,7 +3,7 @@
 #include "BMP180.h"
 #include "pid.h"
 
-static unsigned long check_temperature, check_pressure;
+unsigned long check_temperature, check_pressure;
 double temperature;
 bool has_temperature = false;
 
@@ -29,7 +29,7 @@ void pressure_set(double pressure) {
 void pressure_update(void) {
   // Get the temperature only once
   if (!has_temperature && (time_millis() > check_temperature)) {
-    has_temperature = BMP180_temperature(temperature);
+    has_temperature = BMP180_temperature(&temperature);
 
     if (has_temperature) {
       PID_mode(PID_ON);
@@ -38,7 +38,7 @@ void pressure_update(void) {
 
   // Get the pressure if enough time has elapsed
   if (has_temperature && (time_millis() > check_pressure)) {
-    if (BMP180_pressure(PID_process, temperature)) {
+    if (BMP180_pressure(&PID_process, &temperature)) {
       // Schedule another pressure measurement
       check_pressure = time_millis() + BMP180_start_pressure(0);
     }
