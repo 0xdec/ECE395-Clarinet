@@ -11,7 +11,7 @@
 #define PID_ON        true
 #define PID_AUTOMATIC true
 
-double PID_process, PID_manipulated, PID_setpoint;
+extern double PID_process, PID_manipulated, PID_setpoint;
 
 void PID_init(double kp, double ki, double kd, bool direction);
 bool PID_compute(void);

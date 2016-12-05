@@ -11,6 +11,7 @@
 
 static double PID_limit(double var);
 
+double PID_process, PID_manipulated, PID_setpoint;
 double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
 unsigned long _dt, lastTime;
 bool _direction, _mode;

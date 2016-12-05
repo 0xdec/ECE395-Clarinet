@@ -45,8 +45,7 @@ void I2C_init(void) {
 // Transmit data via I2C
 uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
   // Master transmit mode
-  mode = 0;
-
+  mode      = 0;
   uint8_t i = 0;
 
   I2C_start();
