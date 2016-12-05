@@ -1,6 +1,4 @@
 #include "note.h"
-#include "spi.h"
-#include "pressure.h"
 
 // Clarinet range goes from F3 to F6 (key of Bb)
 static const uint16_t note_map[NUM_NOTES] = {

@@ -2,6 +2,7 @@
 #define _PID_H_
 
 #include "header.h"
+#include "time.h"
 
 #define PID_DIRECT    false
 #define PID_REVERSE   true

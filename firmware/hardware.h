@@ -1,16 +1,19 @@
-// Peripheral pin definitions
-
 #ifndef _HARDWARE_H_
 #define _HARDWARE_H_
 
-#define PWM_PIN   LPC_IOCON->PIO0_8
-
-#define SSEL_PIN  LPC_IOCON->PIO0_2
-#define SCK_PIN   LPC_IOCON->PIO0_6
-#define MISO_PIN  LPC_IOCON->PIO0_8
-#define MOSI_PIN  LPC_IOCON->PIO0_9
-
-#define RXD_PIN   LPC_IOCON->PIO1_6
-#define TXD_PIN   LPC_IOCON->PIO1_7
+// Peripheral pin definitions
+// PWM
+#define HARDWARE_PIN_PWM  PIO0_8
+// I2C
+#define HARDWARE_PIN_SCL  PIO0_4
+#define HARDWARE_PIN_SDA  PIO0_5
+// SPI
+#define HARDWARE_PIN_SSEL PIO0_2
+#define HARDWARE_PIN_SCK  PIO0_6
+#define HARDWARE_PIN_MISO PIO0_8
+#define HARDWARE_PIN_MOSI PIO0_9
+// UART
+#define HARDWARE_PIN_RXD  PIO1_6
+#define HARDWARE_PIN_TXD  PIO1_7
 
 #endif

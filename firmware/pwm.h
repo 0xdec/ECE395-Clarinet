@@ -2,6 +2,8 @@
 #define _PWM_H_
 
 #include "header.h"
+#include "system.h"
+#include "hardware.h"
 
 void PWM_init(uint16_t period);
 void PWM_enable(void);

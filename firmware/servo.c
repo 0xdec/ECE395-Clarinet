@@ -1,5 +1,4 @@
 #include "servo.h"
-#include "pwm.h"
 
 int8_t max_angle;
 

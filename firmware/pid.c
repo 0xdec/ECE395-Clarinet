@@ -8,7 +8,6 @@
  */
 
 #include "pid.h"
-#include "time.h"
 
 static double PID_limit(double var);
 

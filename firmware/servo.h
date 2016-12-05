@@ -2,6 +2,7 @@
 #define _SERVO_H_
 
 #include "header.h"
+#include "pwm.h"
 
 // Assumes that 1.5ms is the center-point and 2ms corresponds to 90deg
 #define PERIOD  20000

@@ -2,6 +2,8 @@
 #define _UART_H_
 
 #include "header.h"
+#include "system.h"
+#include "hardware.h"
 
 void UART_init(uint32_t baudrate);
 void UART_transmit(uint8_t data);

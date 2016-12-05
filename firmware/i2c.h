@@ -2,6 +2,7 @@
 #define _I2C_H_
 
 #include "header.h"
+#include "hardware.h"
 
 void I2C_init(void);
 uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data);

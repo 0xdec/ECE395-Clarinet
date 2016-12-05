@@ -1,6 +1,4 @@
 #include "midi.h"
-#include "uart.h"
-#include "note.h"
 
 static void MIDI_voice(void);
 static void MIDI_sys_common(uint8_t status);

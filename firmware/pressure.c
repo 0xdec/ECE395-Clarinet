@@ -1,7 +1,4 @@
 #include "pressure.h"
-#include "time.h"
-#include "BMP180.h"
-#include "pid.h"
 
 unsigned long check_temperature, check_pressure;
 double temperature;

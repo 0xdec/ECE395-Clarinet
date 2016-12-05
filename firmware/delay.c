@@ -1,5 +1,4 @@
 #include "delay.h"
-#include "system.h"
 
 // Blocking delay by some number of microseconds
 void delay_us(uint32_t delay) {

@@ -2,6 +2,9 @@
 #define _PRESSURE_H_
 
 #include "header.h"
+#include "BMP180.h"
+#include "time.h"
+#include "pid.h"
 
 #define PRESSURE_SEA_LEVEL 101.325 // 1013.25 mbar
 
