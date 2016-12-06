@@ -13,7 +13,7 @@ static double PID_limit(double var);
 
 double PID_process, PID_manipulated, PID_setpoint;
 double _kp, _ki, _kd, _min, _max, iTerm, lastInput;
-unsigned long _dt, lastTime;
+uint32_t _dt, lastTime;
 bool _direction, _mode;
 
 void PID_init(double kp, double ki, double kd, bool direction) {
@@ -29,7 +29,7 @@ void PID_init(double kp, double ki, double kd, bool direction) {
 }
 
 bool PID_compute(void) {
-  unsigned long now = system_millis();
+  uint32_t now = system_millis();
 
   if ((_mode == PID_ON) && (now - lastTime >= _dt)) {
     // Compute the current error
@@ -80,7 +80,7 @@ void PID_limits(double min, double max) {
   }
 }
 
-void PID_period(unsigned long dt) {
+void PID_period(uint32_t dt) {
   double ratio = (double)dt / _dt;
   _ki *= ratio;
   _kd /= ratio;

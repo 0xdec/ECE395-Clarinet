@@ -17,7 +17,7 @@ void PID_init(double kp, double ki, double kd, bool direction);
 bool PID_compute(void);
 void PID_params(double kp, double ki, double kd);
 void PID_limits(double min, double max);
-void PID_period(unsigned long dt);
+void PID_period(uint32_t dt);
 void PID_direction(bool direction);
 void PID_mode(bool mode);
 

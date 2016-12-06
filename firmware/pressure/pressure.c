@@ -1,6 +1,6 @@
 #include "pressure.h"
 
-unsigned long check_temperature, check_pressure;
+uint32_t check_temperature, check_pressure;
 double temperature;
 bool has_temperature = false;
 
