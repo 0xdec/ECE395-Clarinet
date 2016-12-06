@@ -3,11 +3,11 @@
 // Initialize UART interface
 void UART_init(uint32_t baudrate) {
   // Select pin function RXD (sec 7.4.40)
-  LPC_IOCON->HARDWARE_PIN_RXD &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_RXD |=  BIT0;
+  *iocon_register[UART_RXD_PORT][UART_RXD_PIN] &= ~BIT1;
+  *iocon_register[UART_RXD_PORT][UART_RXD_PIN] |=  BIT0;
   // Select pin function TXD (sec 7.4.41)
-  LPC_IOCON->HARDWARE_PIN_TXD &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_TXD |=  BIT0;
+  *iocon_register[UART_TXD_PORT][UART_TXD_PIN] &= ~BIT1;
+  *iocon_register[UART_TXD_PORT][UART_TXD_PIN] |=  BIT0;
 
   // Enable clock for UART (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT12;

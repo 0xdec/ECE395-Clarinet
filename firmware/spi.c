@@ -11,14 +11,14 @@ void SPI_init(uint8_t size) {
   }
 
   // Select pin function SSEL0 (sec 7.4.6)
-  LPC_IOCON->HARDWARE_PIN_SSEL &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_SSEL |=  BIT0;
+  *iocon_register[SPI_SSEL_PORT][SPI_SSEL_PIN] &= ~BIT1;
+  *iocon_register[SPI_SSEL_PORT][SPI_SSEL_PIN] |=  BIT0;
   // Select pin function SCK0 (sec 7.4.18)
-  LPC_IOCON->HARDWARE_PIN_SCK &= ~BIT0;
-  LPC_IOCON->HARDWARE_PIN_SCK |=  BIT1;
+  *iocon_register[SPI_SCK_PORT][SPI_SCK_PIN] &= ~BIT0;
+  *iocon_register[SPI_SCK_PORT][SPI_SCK_PIN] |=  BIT1;
   // Select pin function MOSI0 (sec 7.4.24)
-  LPC_IOCON->HARDWARE_PIN_MOSI &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_MOSI |=  BIT0;
+  *iocon_register[SPI_MOSI_PORT][SPI_MOSI_PIN] &= ~BIT1;
+  *iocon_register[SPI_MOSI_PORT][SPI_MOSI_PIN] |=  BIT0;
   // Select SCK0 function in pin location PIO0_6 (sec 7.4.43)
   LPC_IOCON->SCK_LOC |= BIT1;
 

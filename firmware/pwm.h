@@ -3,7 +3,9 @@
 
 #include "header.h"
 #include "system.h"
-#include "hardware.h"
+
+#define PWM_PORT 0
+#define PWM_PIN  8
 
 void PWM_init(uint16_t period);
 void PWM_enable(void);

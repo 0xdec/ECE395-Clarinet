@@ -17,17 +17,17 @@ uint8_t buffer[256];
 // Initialize I2C interface
 void I2C_init(void) {
   // Select pin function SCL (sec 7.4.11)
-  LPC_IOCON->HARDWARE_PIN_SCL &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_SCL |=  BIT0;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT1;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT0;
   // Select Fast-mode Plus I2C (sec 7.4.11)
-  LPC_IOCON->HARDWARE_PIN_SCL &= ~BIT8;
-  LPC_IOCON->HARDWARE_PIN_SCL |=  BIT9;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT8;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT9;
   // Select pin function SDA (sec 7.4.12)
-  LPC_IOCON->HARDWARE_PIN_SDA &= ~BIT1;
-  LPC_IOCON->HARDWARE_PIN_SDA |=  BIT0;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT1;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT0;
   // Select Fast-mode Plus I2C (sec 7.4.12)
-  LPC_IOCON->HARDWARE_PIN_SDA &= ~BIT8;
-  LPC_IOCON->HARDWARE_PIN_SDA |=  BIT9;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT8;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT9;
 
   // Enable clock for I2C (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT5;

@@ -2,7 +2,12 @@
 #define _I2C_H_
 
 #include "header.h"
-#include "hardware.h"
+
+#define I2C_SCL_PORT 0
+#define I2C_SCL_PIN  4
+
+#define I2C_SDA_PORT 0
+#define I2C_SDA_PIN  5
 
 void I2C_init(void);
 uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data);
