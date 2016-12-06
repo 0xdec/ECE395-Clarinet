@@ -12,7 +12,8 @@ void UART_init(uint32_t baudrate) {
   // Enable clock for UART (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT(12);
   // Set UART clock divider value (sec 3.5.16)
-  LPC_SYSCON->UARTCLKDIV |= (uint8_t)((BASE_FREQ >> 4) / baudrate);
+  // divider = SystemCoreClock / (baudrate * 16)
+  LPC_SYSCON->UARTCLKDIV |= ((SystemCoreClock >> 4) / baudrate) & 0x00FF;
 
   // Enable UART FIFOs (sec 13.5.6)
   LPC_UART->FCR |= BIT(0);
