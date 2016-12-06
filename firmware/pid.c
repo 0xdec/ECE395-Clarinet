@@ -25,11 +25,11 @@ void PID_init(double kp, double ki, double kd, bool direction) {
   PID_direction(direction);
   PID_params(kp, ki, kd);
 
-  lastTime = time_millis() - _dt;
+  lastTime = system_millis() - _dt;
 }
 
 bool PID_compute(void) {
-  unsigned long now = time_millis();
+  unsigned long now = system_millis();
 
   if ((_mode == PID_ON) && (now - lastTime >= _dt)) {
     // Compute the current error
