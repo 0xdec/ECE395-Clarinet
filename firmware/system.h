@@ -6,5 +6,7 @@
 #define BASE_FREQ 48000000UL
 
 uint32_t system_init(void);
+uint32_t system_micros(void);
+uint32_t system_millis(void);
 
 #endif
