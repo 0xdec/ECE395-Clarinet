@@ -25,6 +25,9 @@ void MIDI_init(uint8_t chan) {
 
 // Receive and parse MIDI messages
 void MIDI_receive(void) {
+  // Update pressure reading
+  pressure_update();
+
   // Check if data has been received
   if (UART_available()) {
     uint8_t byte = UART_receive();

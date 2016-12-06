@@ -4,6 +4,7 @@
 #include "header.h"
 #include "uart.h"
 #include "note.h"
+#include "pressure.h"
 
 #define MIDI_BAUD 31250
 
