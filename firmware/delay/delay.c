@@ -2,18 +2,12 @@
 
 // Blocking delay by some number of microseconds
 void delay_us(uint32_t delay) {
-  delay *= 48;
-  while (delay--);
-
-  /* uint8_t i;
-  while (delay--) {
-    for (i = BASE_FREQ / 1000000; i > 0; i--);
-  } */
+  uint32_t now = system_micros();
+  while (system_micros() - now < delay);
 }
 
 // Blocking delay by some number of milliseconds
 void delay_ms(uint32_t delay) {
-  while (delay--) {
-    delay_us(1000);
-  }
+  uint32_t now = system_millis();
+  while (system_millis() - now < delay);
 }
