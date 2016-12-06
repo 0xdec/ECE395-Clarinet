@@ -39,7 +39,7 @@ void MIDI_receive(void) {
       // System Common message
       MIDI_sys_common(byte);
       return;
-    } else if (byte & BIT7) {
+    } else if (byte & BIT(7)) {
       // Voice message
       message_index = 0;
 

@@ -17,29 +17,29 @@ uint8_t buffer[256];
 // Initialize I2C interface
 void I2C_init(void) {
   // Select pin function SCL (sec 7.4.11)
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT1;
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT0;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT(1);
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT(0);
   // Select Fast-mode Plus I2C (sec 7.4.11)
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT8;
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT9;
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT(8);
+  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT(9);
   // Select pin function SDA (sec 7.4.12)
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT1;
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT0;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT(1);
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT(0);
   // Select Fast-mode Plus I2C (sec 7.4.12)
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT8;
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT9;
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT(8);
+  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT(9);
 
   // Enable clock for I2C (sec 3.5.14)
-  LPC_SYSCON->SYSAHBCLKCTRL |= BIT5;
+  LPC_SYSCON->SYSAHBCLKCTRL |= BIT(5);
   // I2C reset de-asserted (sec 3.5.2)
-  LPC_SYSCON->PRESETCTRL |= BIT1;
+  LPC_SYSCON->PRESETCTRL |= BIT(1);
 
   // High duty cycle register for PCLK=48MHz (sec 15.7.5)
   LPC_I2C->SCLH = 0x0018;
   // Low duty cycle register for PCLK=48MHz (sec 15.7.5)
   LPC_I2C->SCLL = 0x0018;
   // Enable I2C interface (sec 15.7.1)
-  LPC_I2C->CONSET |= BIT6;
+  LPC_I2C->CONSET |= BIT(6);
 }
 
 // Transmit data via I2C
@@ -66,7 +66,7 @@ uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
       I2C_address(address);
 
       // Clear STA bit (sec 15.7.6)
-      LPC_I2C->CONCLR = BIT5;
+      LPC_I2C->CONCLR = BIT(5);
     } else if (status == 0x18 || status == 0x28) {
       /*
        * 0x18: SLA+W has been transmitted, ACK has been received.
@@ -113,7 +113,7 @@ uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
     }
 
     // Clear SI bit (sec 15.7.6)
-    LPC_I2C->CONCLR = BIT3;
+    LPC_I2C->CONCLR = BIT(3);
   }
 }
 
@@ -199,7 +199,7 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
     }
 
     // Clear SI bit (sec 15.7.6)
-    LPC_I2C->CONCLR = BIT3;
+    LPC_I2C->CONCLR = BIT(3);
   }
 }
 
@@ -218,7 +218,7 @@ uint8_t I2C_read(uint8_t index) {
 // Wait for SI
 static void I2C_wait(void) {
   // Wait for SI bit (sec 15.10.1 table 236)
-  while (!(LPC_I2C->CONSET & BIT3));
+  while (!(LPC_I2C->CONSET & BIT(3)));
 }
 
 // Get I2C status
@@ -237,18 +237,18 @@ static uint8_t I2C_status(void) {
 
 static void I2C_ack(void) {
   // Set AA bit (sec 15.7.1)
-  LPC_I2C->CONSET = BIT2;
+  LPC_I2C->CONSET = BIT(2);
 }
 
 static void I2C_nack(void) {
   // Clear AA bit (sec 15.7.1)
-  LPC_I2C->CONCLR = BIT2;
+  LPC_I2C->CONCLR = BIT(2);
 }
 
 // Transmit START condition
 static void I2C_start(void) {
   // Set STA bit (sec 15.7.1)
-  LPC_I2C->CONSET = BIT5;
+  LPC_I2C->CONSET = BIT(5);
 }
 
 // Load SLA+R/W
@@ -266,13 +266,13 @@ static void I2C_write_data(uint8_t data) {
   // Send data byte (sec 15.7.3)
   LPC_I2C->DAT = data;
   // Set AA bit (sec 15.7.1)
-  LPC_I2C->CONSET = BIT2;
+  LPC_I2C->CONSET = BIT(2);
 }
 
 // Transmit STOP condition
 static void I2C_stop(void) {
   // Set STO and AA bits (sec 15.7.1)
-  LPC_I2C->CONSET = BIT4 | BIT2;
+  LPC_I2C->CONSET = BIT(4) | BIT(2);
   // Clear SI bit (sec 15.7.6)
-  LPC_I2C->CONCLR = BIT3;
+  LPC_I2C->CONCLR = BIT(3);
 }
