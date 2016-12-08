@@ -1,10 +1,10 @@
 #ifndef _MIDI_H_
 #define _MIDI_H_
 
-#include "header.h"
-#include "uart.h"
-#include "note.h"
-#include "pressure.h"
+#include "../header.h"
+#include "../uart/uart.h"
+#include "../note/note.h"
+#include "../pressure/pressure.h"
 
 #define MIDI_BAUD 31250
 

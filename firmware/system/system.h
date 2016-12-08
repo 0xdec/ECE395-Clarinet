@@ -1,7 +1,7 @@
 #ifndef _SYSTEM_H_
 #define _SYSTEM_H_
 
-#include "header.h"
+#include "../header.h"
 
 #define SYSTEM_MS_PER_TICK 10
 #define SYSTEM_TICKS_10MS  (SystemCoreClock / (1000 / SYSTEM_MS_PER_TICK))

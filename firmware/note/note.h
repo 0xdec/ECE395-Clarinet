@@ -1,9 +1,9 @@
 #ifndef _NOTE_H_
 #define _NOTE_H_
 
-#include "header.h"
-#include "spi.h"
-#include "pressure.h"
+#include "../header.h"
+#include "../spi/spi.h"
+#include "../pressure/pressure.h"
 
 #define LOWEST_NOTE 51 // Corresponds to a Concert Eb
 #define NUM_NOTES   37 // Three octave range

@@ -1,10 +1,10 @@
 #ifndef _PRESSURE_H_
 #define _PRESSURE_H_
 
-#include "header.h"
-#include "system.h"
-#include "BMP180.h"
-#include "pid.h"
+#include "../header.h"
+#include "../system/system.h"
+#include "../BMP180/BMP180.h"
+#include "../pid/pid.h"
 
 #define PRESSURE_SEA_LEVEL 101.325 // 1013.25 mbar
 

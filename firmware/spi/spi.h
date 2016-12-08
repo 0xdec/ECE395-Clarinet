@@ -1,7 +1,7 @@
 #ifndef _SPI_H_
 #define _SPI_H_
 
-#include "header.h"
+#include "../header.h"
 
 #define SPI_SSEL_PORT 0
 #define SPI_SSEL_PIN  2

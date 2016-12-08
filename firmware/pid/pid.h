@@ -1,8 +1,8 @@
 #ifndef _PID_H_
 #define _PID_H_
 
-#include "header.h"
-#include "system.h"
+#include "../header.h"
+#include "../system/system.h"
 
 #define PID_DIRECT    false
 #define PID_REVERSE   true

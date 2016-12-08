@@ -1,8 +1,8 @@
 #ifndef _BMP180_H_
 #define _BMP180_H_
 
-#include "header.h"
-#include "i2c.h"
+#include "../header.h"
+#include "../i2c/i2c.h"
 
 #define BMP180_ADDR 0x77 // 7-bit address
 

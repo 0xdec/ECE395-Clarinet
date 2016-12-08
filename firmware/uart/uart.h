@@ -1,8 +1,8 @@
 #ifndef _UART_H_
 #define _UART_H_
 
-#include "header.h"
-#include "system.h"
+#include "../header.h"
+#include "../system/system.h"
 
 #define UART_RXD_PORT 1
 #define UART_RXD_PIN  6

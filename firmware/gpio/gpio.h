@@ -1,7 +1,7 @@
 #ifndef _GPIO_H_
 #define _GPIO_H_
 
-#include "header.h"
+#include "../header.h"
 
 #define GPIO_INPUT  false
 #define GPIO_OUTPUT true

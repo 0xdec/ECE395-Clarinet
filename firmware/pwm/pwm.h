@@ -1,8 +1,8 @@
 #ifndef _PWM_H_
 #define _PWM_H_
 
-#include "header.h"
-#include "system.h"
+#include "../header.h"
+#include "../system/system.h"
 
 #define PWM_PORT 0
 #define PWM_PIN  8

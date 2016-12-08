@@ -1,6 +1,6 @@
 #include "header.h"
-#include "system.h"
-#include "midi.h"
+#include "system/system.h"
+#include "midi/midi.h"
 
 int main() {
   // Initialize all required peripherals

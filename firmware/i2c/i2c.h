@@ -1,7 +1,7 @@
 #ifndef _I2C_H_
 #define _I2C_H_
 
-#include "header.h"
+#include "../header.h"
 
 #define I2C_SCL_PORT 0
 #define I2C_SCL_PIN  4
