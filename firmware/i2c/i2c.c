@@ -147,7 +147,7 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
        */
 
       return status;
-    } else if (status == 0x40 || status == 0x48) {
+    } else if (status == 0x40) {
       /*
        * 0x40: SLA+R has been transmitted, ACK has been received.
        *  - Set AA
