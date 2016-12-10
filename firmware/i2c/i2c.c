@@ -53,6 +53,7 @@ uint8_t I2C_transmit(uint8_t address, uint8_t length, uint8_t* data) {
   while (true) {
     // Get status
     uint8_t status = I2C_status();
+		// UART_transmit(status);
 
     if (status == 0x08 || status == 0x10) {
       /*
@@ -128,6 +129,7 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
   while (true) {
     // Get status
     uint8_t status = I2C_status();
+		// UART_transmit(status);
 
     if (status == 0x08 || status == 0x10) {
       /*

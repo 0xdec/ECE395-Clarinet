@@ -19,6 +19,9 @@ bool pressure_init(void) {
 // Set the target pressure in kPa
 void pressure_set(double pressure) {
   PID_setpoint = pressure * 10;
+	/* UART_transmit((int)PID_setpoint);
+	UART_transmit((int)PID_process);
+	UART_transmit((int)PID_manipulated); */
   pressure_update();
 }
 
@@ -29,6 +32,7 @@ void pressure_update(void) {
     has_temperature = BMP180_temperature(&temperature);
 
     if (has_temperature) {
+			// UART_transmit((int)temperature);
       PID_mode(PID_ON);
     }
   }
@@ -43,5 +47,8 @@ void pressure_update(void) {
 
   if (PID_compute()) {
     // Write PID_manipulated via SPI or parallel to DAC
+		/* UART_transmit((int)PID_setpoint);
+		UART_transmit((int)PID_process);
+		UART_transmit((int)PID_manipulated); */
   }
 }
