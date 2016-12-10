@@ -19,15 +19,9 @@ void I2C_init(void) {
   // Select pin function SCL (sec 7.4.11)
   *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT(1);
   *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT(0);
-  // Select Fast-mode Plus I2C (sec 7.4.11)
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] &= ~BIT(8);
-  *iocon_register[I2C_SCL_PORT][I2C_SCL_PIN] |=  BIT(9);
   // Select pin function SDA (sec 7.4.12)
   *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT(1);
   *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT(0);
-  // Select Fast-mode Plus I2C (sec 7.4.12)
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] &= ~BIT(8);
-  *iocon_register[I2C_SDA_PORT][I2C_SDA_PIN] |=  BIT(9);
 
   // Enable clock for I2C (sec 3.5.14)
   LPC_SYSCON->SYSAHBCLKCTRL |= BIT(5);
@@ -35,9 +29,9 @@ void I2C_init(void) {
   LPC_SYSCON->PRESETCTRL |= BIT(1);
 
   // High duty cycle register for PCLK=48MHz (sec 15.7.5)
-  LPC_I2C->SCLH = 0x0018;
+  LPC_I2C->SCLH = 0x003C;
   // Low duty cycle register for PCLK=48MHz (sec 15.7.5)
-  LPC_I2C->SCLL = 0x0018;
+  LPC_I2C->SCLL = 0x003C;
   // Enable I2C interface (sec 15.7.1)
   LPC_I2C->CONSET |= BIT(6);
 }
