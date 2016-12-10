@@ -153,7 +153,13 @@ uint8_t I2C_request(uint8_t address, uint8_t length) {
        *  - Set AA
        */
 
-      I2C_ack();
+      buffer[available++] = I2C_read_data();
+
+      if (available < length) {
+        I2C_ack();
+      } else {
+        I2C_nack();
+      }
     } else if (status == 0x48) {
       /*
        * 0x48: SLA+R has been transmitted, NOT ACK has been received.
