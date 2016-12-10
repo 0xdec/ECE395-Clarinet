@@ -3,13 +3,14 @@ reference
 
 firmware/.*
 
-firmware/*.axf
-firmware/*.crf
-firmware/*.d
-firmware/*.dep
-firmware/*.htm
-firmware/*.iex
-firmware/*.lnp
-firmware/*.map
-firmware/*.o
-firmware/*.uvgui.*
+firmware/**/*.axf
+firmware/**/*.crf
+firmware/**/*.d
+firmware/**/*.dep
+firmware/**/*.gch
+firmware/**/*.htm
+firmware/**/*.iex
+firmware/**/*.lnp
+firmware/**/*.map
+firmware/**/*.o
+firmware/**/*.uvgui.*

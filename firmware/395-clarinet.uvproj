@@ -10,7 +10,7 @@
       <TargetName>395-clarinet</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
+      <pCCUsed>5060183::V5.06 update 2 (build 183)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>LPC1114/202</Device>
@@ -123,6 +123,47 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
+          <Simulator>
+            <UseSimulator>1</UseSimulator>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>1</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Simulator>
+          <Target>
+            <UseTarget>0</UseTarget>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>0</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Target>
+          <RunDebugAfterBuild>0</RunDebugAfterBuild>
+          <TargetSelection>1</TargetSelection>
+          <SimDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+          </SimDlls>
+          <TargetDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+            <Driver>BIN\UL2CM3.DLL</Driver>
+          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -320,12 +361,14 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <v6Lang>0</v6Lang>
             <v6LangP>0</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -374,14 +417,14 @@
           <GroupName>Startup</GroupName>
           <Files>
             <File>
-              <FileName>startup_LPC11xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\startup_LPC11xx.s</FilePath>
-            </File>
-            <File>
               <FileName>system_LPC11xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system_LPC11xx.c</FilePath>
+              <FilePath>.\LPC11xx\system_LPC11xx.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_LPC11xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\LPC11xx\startup_LPC11xx.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -404,74 +447,39 @@
           <GroupName>firmware</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FileName>LPC11xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC11xx\LPC11xx.h</FilePath>
             </File>
             <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\delay.c</FilePath>
+              <FileName>core_cm0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC11xx\core_cm0.h</FilePath>
             </File>
             <File>
-              <FileName>gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\gpio.c</FilePath>
+              <FileName>core_cmFunc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC11xx\core_cmFunc.h</FilePath>
             </File>
             <File>
-              <FileName>midi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\midi.c</FilePath>
-            </File>
-            <File>
-              <FileName>notes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\notes.c</FilePath>
-            </File>
-            <File>
-              <FileName>pwm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\pwm.c</FilePath>
-            </File>
-            <File>
-              <FileName>servo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\servo.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>system.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\system.c</FilePath>
+              <FileName>core_cmInstr.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC11xx\core_cmInstr.h</FilePath>
             </File>
             <File>
               <FileName>system_LPC11xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system_LPC11xx.c</FilePath>
+              <FilePath>.\LPC11xx\system_LPC11xx.c</FilePath>
             </File>
             <File>
-              <FileName>uart.c</FileName>
+              <FileName>system_LPC11xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC11xx\system_LPC11xx.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>delay.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\delay.h</FilePath>
-            </File>
-            <File>
-              <FileName>gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gpio.h</FilePath>
-            </File>
-            <File>
-              <FileName>hardware.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\hardware.h</FilePath>
+              <FilePath>.\main.c</FilePath>
             </File>
             <File>
               <FileName>header.h</FileName>
@@ -479,34 +487,134 @@
               <FilePath>.\header.h</FilePath>
             </File>
             <File>
-              <FileName>midi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\midi.h</FilePath>
+              <FileName>BMP180.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BMP180\BMP180.c</FilePath>
             </File>
             <File>
-              <FileName>notes.h</FileName>
+              <FileName>BMP180.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\notes.h</FilePath>
+              <FilePath>.\BMP180\BMP180.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\delay\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\gpio\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\gpio\gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\i2c\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\i2c\i2c.h</FilePath>
+            </File>
+            <File>
+              <FileName>midi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\midi\midi.c</FilePath>
+            </File>
+            <File>
+              <FileName>midi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\midi\midi.h</FilePath>
+            </File>
+            <File>
+              <FileName>note.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\note\note.c</FilePath>
+            </File>
+            <File>
+              <FileName>note.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\note\note.h</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pid\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pid\pid.h</FilePath>
+            </File>
+            <File>
+              <FileName>pressure.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pressure\pressure.c</FilePath>
+            </File>
+            <File>
+              <FileName>pressure.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pressure\pressure.h</FilePath>
+            </File>
+            <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pwm\pwm.c</FilePath>
             </File>
             <File>
               <FileName>pwm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\pwm.h</FilePath>
+              <FilePath>.\pwm\pwm.h</FilePath>
+            </File>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\servo\servo.c</FilePath>
             </File>
             <File>
               <FileName>servo.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\servo.h</FilePath>
+              <FilePath>.\servo\servo.h</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\spi\spi.c</FilePath>
             </File>
             <File>
               <FileName>spi.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\spi.h</FilePath>
+              <FilePath>.\spi\spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\system\system.c</FilePath>
+            </File>
+            <File>
+              <FileName>system.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\system\system.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart\uart.c</FilePath>
             </File>
             <File>
               <FileName>uart.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\uart.h</FilePath>
+              <FilePath>.\uart\uart.h</FilePath>
             </File>
           </Files>
         </Group>
