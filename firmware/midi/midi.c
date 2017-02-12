@@ -33,12 +33,12 @@ void MIDI_receive(void) {
     uint8_t byte = UART_receive();
     UART_transmit(byte); // HACK: debugging
 
-		/* uint32_t now = system_millis();
-		UART_transmit(now >> 24);
-		UART_transmit(now >> 16);
-		UART_transmit(now >> 8);
-		UART_transmit(now);
-		UART_transmit(now / 1000); */
+    /* uint32_t now = system_millis();
+    UART_transmit(now >> 24);
+    UART_transmit(now >> 16);
+    UART_transmit(now >> 8);
+    UART_transmit(now);
+    UART_transmit(now / 1000); */
 
     // Determine message type from status byte
     if (byte >= 0xF8) {
