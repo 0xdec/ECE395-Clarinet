@@ -12,6 +12,8 @@
 
   <title>Clarinet Fingering Tool</title>
 
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
   <script src="bower_components/draft.js/dist/draft.min.js"></script>
   <script src="bower_components/draft-svg/dist/draft-svg.min.js"></script>
   <script defer src="scripts/main.js"></script>
@@ -27,10 +29,23 @@
       padding: 8px;
       box-sizing: border-box;
     }
-    
+
     a {
       color: #333;
       text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* add a FontAwesome icon after external links */
+    a[href^="http://"]:after, a[href^="https://"]:after {
+      content: "\f08e";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: none;
+      padding-left: 3px;
     }
 
     .flex {
@@ -68,8 +83,8 @@
 <body>
   <div class="flex column center">
     <h2>Self-Playing Clarinet</h2>
-    <a href="https://github.com/0xdec/self-playing-clarinet">View on GitHub</a>
-    <a href="report.pdf">Final Report (PDF)</a>
+    <span>View on <a href="https://github.com/0xdec/self-playing-clarinet">GitHub</a></span>
+    <span>View <a href="report.pdf" type="application/pdf">Final Report</a></span>
   </div>
 
   <div class="flex row around">

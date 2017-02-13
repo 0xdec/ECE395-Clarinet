@@ -1,0 +1,23 @@
+{
+  "name": "self-playing-clarinet",
+  "homepage": "http://jordi.codes/self-playing-clarinet",
+  "authors": [
+    "Jordi Pakey-Rodriguez <jordi.orlando@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "draft-svg": "dev",
+    "font-awesome": "^4.7.0",
+    "draft.js": "dev"
+  }
+}
